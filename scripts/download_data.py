@@ -7,7 +7,7 @@ Licence: Creative Commons Attribution 4.0 International.
 
 Four workbooks are used:
 - moving annual median rents by suburb, September quarter 2025 (the core
-  time series: 7 dwelling types x 147 suburbs and towns, Mar 2000 - Sep 2025)
+  time series: 7 dwelling types x 146 suburbs and towns, Mar 2000 - Sep 2025)
 - quarterly median rents by Local Government Area, September quarter 2025
 - affordable lettings by LGA, September quarter 2024 (the latest one with a
   public copy that can be fetched without a browser; the Sep 2025 snapshot is
