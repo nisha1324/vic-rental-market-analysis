@@ -1,4 +1,4 @@
-"""Rent growth by suburb, region and state, computed in DuckDB.
+"""Rent growth (Part 2) and affordability (Part 3), computed in DuckDB.
 
 The analysis itself is SQL in sql/*.sql (commented, one question per file,
 run in order). This module loads the tidy CSVs and the CPI into an
@@ -36,14 +36,35 @@ COLUMNS = {
                   "row_type": "VARCHAR", "quarter": "DATE", "lettings": "BIGINT",
                   "median_rent": "DOUBLE"},
     "cpi": {"quarter": "DATE", "cpi": "DOUBLE"},
+    "lga_affordability": {"dwelling": "VARCHAR", "lga": "VARCHAR", "row_type": "VARCHAR", "quarter": "DATE",
+                          "affordable_lettings": "BIGINT", "affordable_share": "DOUBLE"},
+    "lga_affordability_latest": {"dwelling": "VARCHAR", "lga": "VARCHAR", "row_type": "VARCHAR",
+                                 "metro": "BOOLEAN", "quarter": "DATE", "affordable_lettings": "BIGINT",
+                                 "affordable_share": "DOUBLE"},
+    "affordability_thresholds": {"dwelling": "VARCHAR", "household": "VARCHAR", "weekly_income": "DOUBLE",
+                                 "affordable_rent": "DOUBLE", "area": "VARCHAR", "quarter": "DATE",
+                                 "affordable_lettings": "BIGINT", "affordable_share": "DOUBLE"},
+    "affordability_state_revised": {"area": "VARCHAR", "quarter": "DATE", "affordable_share": "DOUBLE"},
 }
+AFFORDABILITY_TABLES = ("lga_affordability", "lga_affordability_latest", "affordability_thresholds",
+                        "affordability_state_revised")
 
 
 def connect(suburbs: pd.DataFrame, lgas: pd.DataFrame, cpi: pd.DataFrame,
-            min_lettings: int = MIN_LETTINGS) -> duckdb.DuckDBPyConnection:
-    """Load the three inputs as tables and run every sql/*.sql file."""
+            min_lettings: int = MIN_LETTINGS, **affordability: pd.DataFrame) -> duckdb.DuckDBPyConnection:
+    """Load the inputs as tables and run every sql/*.sql file.
+
+    The affordability tables (AFFORDABILITY_TABLES, as keyword arguments) are
+    optional: any not given is created empty, so the Part 3 SQL runs and
+    returns nothing."""
+    unknown = set(affordability) - set(AFFORDABILITY_TABLES)
+    if unknown:
+        raise TypeError(f"unknown tables {sorted(unknown)}")
     con = duckdb.connect()
-    for name, df in {"suburb_rents": suburbs, "lga_rents": lgas, "cpi": cpi}.items():
+    inputs = {"suburb_rents": suburbs, "lga_rents": lgas, "cpi": cpi}
+    for name in AFFORDABILITY_TABLES:
+        inputs[name] = affordability.get(name, pd.DataFrame(columns=list(COLUMNS[name])))
+    for name, df in inputs.items():
         cols = COLUMNS[name]
         con.register("_in", df[list(cols)])
         select = ", ".join(f"cast({c} as {t}) as {c}" for c, t in cols.items())
@@ -63,6 +84,14 @@ def load_inputs(processed: Path = PROCESSED, cpi_csv: Path = CPI_CSV) -> tuple[p
                          "(and scripts/download_cpi.py for the CPI) first")
     read = lambda p: pd.read_csv(p, parse_dates=["quarter"])  # noqa: E731
     return read(processed / "suburb_rents.csv"), read(processed / "lga_rents.csv"), read(cpi_csv)
+
+
+def load_affordability(processed: Path = PROCESSED) -> dict[str, pd.DataFrame]:
+    paths = {name: processed / f"{name}.csv" for name in AFFORDABILITY_TABLES}
+    missing = [str(p) for p in paths.values() if not p.exists()]
+    if missing:
+        raise SystemExit(f"missing {missing}: run scripts/build.py first")
+    return {name: pd.read_csv(p, parse_dates=["quarter"]) for name, p in paths.items()}
 
 
 def query(con: duckdb.DuckDBPyConnection, sql: str) -> pd.DataFrame:
