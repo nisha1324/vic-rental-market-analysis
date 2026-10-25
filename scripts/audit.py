@@ -49,6 +49,11 @@ def main() -> None:
     small = audit.small_samples(suburbs)
     raw = set().union(*(parse.raw_labels(RAW / f) for _, f in SOURCES.values()), parse.raw_labels(TABLES))
     fixes = audit.name_fixes_used(raw)
+    snap = audit.affordability_snapshot(data["lga_affordability_latest.csv"], data["affordability_thresholds.csv"],
+                                        lgas, aff)
+    revisions = audit.affordability_revisions(aff, data["affordability_state_revised.csv"])
+    settled = revisions[~revisions["workbook_latest_quarter"]]
+    newest = revisions[revisions["workbook_latest_quarter"]]
 
     hard = {
         "Table 4: every published figure matches the parsed median": bool(recon["matches"].all()),
@@ -60,7 +65,18 @@ def main() -> None:
         "LGAs: Victoria never below the published LGAs; every gap has a suppressed LGA":
             lga_tot["victoria_below_lga_sum"] == 0 and lga_tot["gap_without_suppressed_lga"] == 0,
         "Affordability: Victoria row = sum of LGAs in every quarter": aff_tot["victoria_eq_lga_sum"] == aff_tot["quarters"],
-        "Affordability: every share is between 0 and 1": aff_tot["share_out_of_range"] == 0,
+        "Affordability: every share is between 0 and 1":
+            aff_tot["share_out_of_range"] == 0 and snap["share_out_of_range"] == 0,
+        "Affordability, Sep 2025 (Table 14): LGAs sum to the Victoria row; metro/regional sums = Table 9":
+            snap["victoria_eq_lga_sum"] == snap["dwellings"] and snap["area_eq_table9"] == snap["area_cells"]
+            and snap["victoria_share_eq_table9"] == snap["dwellings"],
+        "Affordability: Table 14 has the same 79 LGAs and metro split as the series and the LGA rents":
+            not (snap["lgas_missing_from_series"] or snap["lgas_missing_from_latest"] or snap["metro_flag_disagrees"]),
+        "Affordability: 1-4 bedroom counts add up to the total in every LGA-quarter": (
+            snap["bedrooms_eq_all_latest"] == snap["lgas"]
+            and snap["bedrooms_eq_all_series"] == snap["series_lga_quarters"]),
+        "Affordability: the later report agrees with the workbook (±0.001) except its newest quarter":
+            bool((settled["difference"].abs() <= 0.001).all()) and len(settled) > 0,
         "No zero/negative medians or negative counts": all(
             plaus[k] == 0 for k in plaus if "nonpositive" in k or "negative" in k),
         "No median published without a count": all(plaus[k] == 0 for k in plaus if "without" in k),
@@ -112,6 +128,27 @@ def main() -> None:
         "than the rents.",
         "",
         md(cov_aff),
+        "",
+        f"**The September 2025 snapshot.** The {latest:%B %Y} report's Table 14 gives the same measures by LGA "
+        "for its own quarter, a year past the workbook. Its 79 LGAs are the workbook's 79, its Metro/Regional "
+        "flag matches the metro regions of the LGA rents, its LGAs add up to its total for every bedroom count, "
+        "and its metro and regional sums equal Table 9. Table 9 also gives the household each bedroom count "
+        "stands for and the most it can afford. The 1–4 bedroom counts add up to the total in all "
+        f"{snap['series_lga_quarters']:,} LGA-quarters of the workbook and all {snap['lgas']} LGAs of Table 14, "
+        "so the workbook's \"four bedroom\" sheet is the report's \"4+ bedrooms\".",
+        "",
+        f"**The newest quarter in a release is revised later.** Figure 8 of the {latest:%B %Y} report repeats the "
+        f"state, metro and regional share (all bedrooms) for {revisions['quarter'].nunique()} quarters that the "
+        f"workbook also has. In the {len(settled)} area-quarters before the workbook's last quarter the two agree "
+        f"to within 0.001 ({int((settled['difference'] != 0).sum())} differ by exactly that, i.e. rounding). The "
+        f"workbook's last quarter, {newest['quarter'].max():%B %Y}, was revised **up** in the later report:",
+        "",
+        md(newest.assign(quarter=newest["quarter"].dt.strftime("%b %Y"))[
+            ["area", "quarter", "workbook", "later_report", "difference"]]),
+        "",
+        "So the newest quarter of a release is provisional, and the one revision visible here went up. "
+        "The analysis uses the revised Figure 8 values for the state trend, and treats the September 2025 "
+        "LGA figures (the newest quarter of their own release) as likely to be revised up too.",
         "",
         "## Reconciliation with the published report (Table 4)",
         "",

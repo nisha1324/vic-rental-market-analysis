@@ -76,6 +76,9 @@ def real():
         "lgas": parse.parse_lgas(LGAS),
         "aff": parse.parse_affordability(AFFORD),
         "table4": parse.parse_table4(TABLES),
+        "latest": parse.parse_table14(TABLES),
+        "thresholds": parse.parse_table9(TABLES),
+        "revised": parse.parse_fig8(TABLES),
     }
 
 
@@ -108,3 +111,31 @@ def test_real_totals(real):
     assert lt["victoria_below_lga_sum"] == 0 and lt["gap_without_suppressed_lga"] == 0
     at = audit.affordability_totals(real["aff"])
     assert at["victoria_eq_lga_sum"] == at["quarters"] and at["share_out_of_range"] == 0
+
+
+def test_affordability_revisions_marks_newest_quarter():
+    q1, q2 = pd.Timestamp("2024-06-30"), pd.Timestamp("2024-09-30")
+    series = pd.DataFrame([("all", "Victoria", "victoria", q1, 10, 0.123), ("all", "Victoria", "victoria", q2, 10, 0.104),
+                           ("2br", "Victoria", "victoria", q2, 5, 0.9)],
+                          columns=["dwelling", "lga", "row_type", "quarter", "affordable_lettings", "affordable_share"])
+    revised = pd.DataFrame({"area": ["victoria"] * 2, "quarter": [q1, q2], "affordable_share": [0.124, 0.120]})
+    r = audit.affordability_revisions(series, revised).set_index("quarter")
+    assert len(r) == 2  # bedroom rows are not compared
+    assert r.loc[q1, "difference"] == 0.001 and not r.loc[q1, "workbook_latest_quarter"]
+    assert r.loc[q2, "difference"] == 0.016 and r.loc[q2, "workbook_latest_quarter"]
+    # a workbook that runs past the later report: no compared quarter is its newest
+    later = pd.concat([series, series.iloc[[1]].assign(quarter=pd.Timestamp("2024-12-31"))])
+    assert not audit.affordability_revisions(later, revised)["workbook_latest_quarter"].any()
+
+
+@needs_data
+def test_real_affordability_snapshot(real):
+    s = audit.affordability_snapshot(real["latest"], real["thresholds"], real["lgas"], real["aff"])
+    assert s["victoria_eq_lga_sum"] == s["dwellings"] == 5
+    assert s["area_eq_table9"] == s["area_cells"] == 10
+    assert s["lgas"] == 79 and not s["lgas_missing_from_series"] and not s["metro_flag_disagrees"]
+    assert s["bedrooms_eq_all_series"] == s["series_lga_quarters"]
+    r = audit.affordability_revisions(real["aff"], real["revised"])
+    assert (r.loc[~r.workbook_latest_quarter, "difference"].abs() <= 0.001).all()
+    newest = r[r.workbook_latest_quarter].set_index("area")["difference"]
+    assert (newest > 0).all() and newest["victoria"] == 0.016

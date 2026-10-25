@@ -260,6 +260,130 @@ def parse_table4(path: Path) -> pd.DataFrame:
     return pd.DataFrame.from_records(records)
 
 
+TABLE14_BEDROOMS = {"1 Bedroom": "1br", "2 Bedrooms": "2br", "3 Bedrooms": "3br",
+                    "4+ Bedrooms": "4br", "Total": "all"}
+TABLE9_BEDROOMS = {"1 bedroom": "1br", "2 bedroom": "2br", "3 bedroom": "3br", "4+ bedroom": "4br"}
+TABLE9_AREAS = {"Metropolitan Melbourne": "metro", "Regional Victoria": "non_metro", "Victoria": "victoria"}
+FIG8_AREAS = {"Victoria": "victoria", "Metro": "metro", "Regional": "non_metro"}
+
+
+def _sheet_rows(path: Path, sheet: str) -> list[list]:
+    wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
+    if sheet not in wb.sheetnames:
+        raise ValueError(f"{path.name}: missing sheet {sheet!r}")
+    rows = [list(r) for r in wb[sheet].iter_rows(values_only=True)]
+    wb.close()
+    return rows
+
+
+def _label(value) -> str:
+    return " ".join(str(value).split()) if value is not None else ""
+
+
+def parse_fig8(path: Path) -> pd.DataFrame:
+    """Source data for Figure 8 of the report: the share of new lettings that
+    are affordable, Victoria / Metro / Regional, for the last 21 quarters.
+
+    It overlaps the affordability workbook, so it shows whether past quarters
+    were revised. Its last date is also the report's quarter, which the
+    Table 9 and Table 14 snapshots don't state themselves."""
+    rows = _sheet_rows(path, "Fig 8 source")
+    header = next(i for i, r in enumerate(rows) if _label(r[1]).startswith("Victoria"))
+    cols = {j: FIG8_AREAS[_label(c).split(" ")[0]] for j, c in enumerate(rows[header])
+            if _label(c).split(" ")[0] in FIG8_AREAS}
+    if sorted(cols.values()) != sorted(FIG8_AREAS.values()):
+        raise ValueError(f"Fig 8 source: unexpected header {rows[header]}")
+    records = []
+    for i, r in enumerate(rows[header + 1:], start=header + 1):
+        if r[0] is None:
+            continue
+        if not hasattr(r[0], "year"):
+            raise ValueError(f"Fig 8 source: unexpected date {r[0]!r} in row {i}")
+        quarter = pd.Timestamp(r[0]) + pd.offsets.QuarterEnd(0)
+        for j, area in cols.items():
+            records.append({"area": area, "quarter": quarter,
+                            "affordable_share": clean_value(r[j], f"Fig 8 source!r{i}c{j}")})
+    return _check_unique(pd.DataFrame.from_records(records), ["area", "quarter"])
+
+
+def report_quarter(path: Path) -> pd.Timestamp:
+    return parse_fig8(path)["quarter"].max()
+
+
+def parse_table9(path: Path) -> pd.DataFrame:
+    """Table 9: the indicative household for each bedroom count, its weekly
+    income, the most it can pay (30% of income) and how many new lettings in
+    the report's quarter were at or below that rent, by area."""
+    rows = _sheet_rows(path, "Table 9")
+    at = lambda name: next(i for i, r in enumerate(rows) if _label(r[0]) == name)  # noqa: E731
+    sizes, households = rows[at("Assumed property size")], rows[at("Household type")]
+    income, rent = rows[at("Weekly income (net of RA)")], rows[at("Affordable weekly rent")]
+    blocks = {"affordable_lettings": at("Affordable rentals (number)"),
+              "affordable_share": at("Affordable rentals (% of total)")}
+    # each block: a heading row, then one row per area with its name in column 1
+    area_rows = {m: {TABLE9_AREAS[_label(rows[i][1])]: i for i in range(start + 1, start + 1 + len(TABLE9_AREAS))
+                     if _label(rows[i][1]) in TABLE9_AREAS} for m, start in blocks.items()}
+    for m, found in area_rows.items():
+        if sorted(found) != sorted(TABLE9_AREAS.values()):
+            raise ValueError(f"Table 9: {m} block has areas {sorted(found)}")
+    columns = {j: TABLE9_BEDROOMS[_label(s)] for j, s in enumerate(sizes) if _label(s) in TABLE9_BEDROOMS}
+    columns[next(j for j, h in enumerate(households) if _label(h) == "Total")] = "all"
+    if sorted(columns.values()) != sorted([*TABLE9_BEDROOMS.values(), "all"]):
+        raise ValueError(f"Table 9: unexpected property sizes {sizes}")
+    quarter = report_quarter(path)
+    records = []
+    for j, dwelling in columns.items():
+        total = dwelling == "all"
+        for area in TABLE9_AREAS.values():
+            records.append({
+                "dwelling": dwelling, "household": "all" if total else _label(households[j]),
+                "weekly_income": float("nan") if total else clean_value(income[j], f"Table 9!income c{j}"),
+                "affordable_rent": float("nan") if total else clean_value(rent[j], f"Table 9!rent c{j}"),
+                "area": area, "quarter": quarter,
+                **{m: clean_value(rows[area_rows[m][area]][j], f"Table 9!r{area_rows[m][area]}c{j}")
+                   for m in blocks}})
+    return _check_unique(pd.DataFrame.from_records(records), ["dwelling", "area"])
+
+
+def parse_table14(path: Path) -> pd.DataFrame:
+    """Table 14: affordable new lettings by LGA and bedroom count in the
+    report's quarter (count and share), with the report's Metro/Regional flag.
+    The same measures as the affordability workbook, one quarter later."""
+    rows = _sheet_rows(path, "Table 14")
+    head = next(i for i, r in enumerate(rows) if _label(r[1]) == "1 Bedroom")
+    measure_row = next(i for i in range(head, len(rows)) if _label(rows[i][1]) == "#")
+    cols = {}  # dwelling -> (count column, share column)
+    for j, c in enumerate(rows[head]):
+        if _label(c) in TABLE14_BEDROOMS:
+            if (_label(rows[measure_row][j]), _label(rows[measure_row][j + 1])) != ("#", "%"):
+                raise ValueError(f"Table 14: unexpected measures under {c!r}")
+            cols[TABLE14_BEDROOMS[_label(c)]] = (j, j + 1)
+    flag_col = next(j for j, c in enumerate(rows[measure_row]) if _label(c) == "Metro/RV")
+    if sorted(cols) != sorted(TABLE14_BEDROOMS.values()):
+        raise ValueError(f"Table 14: unexpected header {rows[head]}")
+    quarter = report_quarter(path)
+    records = []
+    for i in range(measure_row + 1, len(rows)):
+        name = _label(rows[i][0])
+        if not name:
+            continue
+        flag = _label(rows[i][flag_col])
+        if name == "Total":
+            row_type, metro = "victoria", None
+        elif flag in ("M", "R"):
+            row_type, metro = "lga", flag == "M"
+        else:
+            raise ValueError(f"Table 14: row {i} ({name!r}) has Metro/RV flag {flag!r}")
+        for dwelling, (jc, js) in cols.items():
+            records.append({"dwelling": dwelling, "lga": "Victoria" if row_type == "victoria" else clean_name(name),
+                            "row_type": row_type, "metro": metro, "quarter": quarter,
+                            "affordable_lettings": clean_value(rows[i][jc], f"Table 14!r{i}c{jc}"),
+                            "affordable_share": clean_value(rows[i][js], f"Table 14!r{i}c{js}")})
+    df = pd.DataFrame.from_records(records)
+    cols_out = ["dwelling", "lga", "row_type", "metro", "quarter", "affordable_lettings", "affordable_share"]
+    return _check_unique(df[cols_out], ["dwelling", "lga"])
+
+
 def duplicate_mismatches(df: pd.DataFrame, keep: str, dup: str, measures: list[str]) -> pd.DataFrame:
     """Quarters where a repeated total row disagrees with the first one."""
     a = df[df["row_type"] == keep].set_index(["dwelling", "quarter"])[measures]

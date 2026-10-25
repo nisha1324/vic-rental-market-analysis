@@ -18,6 +18,10 @@ SOURCES = {
     "suburb_rents.csv": (parse.parse_suburbs, "moving_annual_rents_by_suburb_sep2025.xlsx"),
     "lga_rents.csv": (parse.parse_lgas, "quarterly_median_rents_by_lga_sep2025.xlsx"),
     "lga_affordability.csv": (parse.parse_affordability, "affordable_lettings_by_lga_sep2024.xlsx"),
+    # snapshots from the September 2025 report tables (one quarter, or the last 21 for Fig 8)
+    "lga_affordability_latest.csv": (parse.parse_table14, "rental_report_tables_sep2025.xlsx"),
+    "affordability_thresholds.csv": (parse.parse_table9, "rental_report_tables_sep2025.xlsx"),
+    "affordability_state_revised.csv": (parse.parse_fig8, "rental_report_tables_sep2025.xlsx"),
 }
 
 

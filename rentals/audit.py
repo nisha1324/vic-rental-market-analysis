@@ -122,6 +122,51 @@ def affordability_totals(aff: pd.DataFrame) -> dict:
     }
 
 
+def affordability_snapshot(latest: pd.DataFrame, thresholds: pd.DataFrame, lgas: pd.DataFrame,
+                           series: pd.DataFrame) -> dict:
+    """Table 14 (LGAs, latest quarter) against Table 9 (metro / regional /
+    Victoria) and the workbook series, so the two can be joined."""
+    by = lambda df, k: df.set_index(k)["affordable_lettings"]  # noqa: E731
+    lga = latest[latest["row_type"] == "lga"]
+    vic = by(latest[latest["row_type"] == "victoria"], "dwelling")
+    t9 = thresholds.set_index(["area", "dwelling"])
+    split = lga.assign(area=lga["metro"].map({True: "metro", False: "non_metro"})).groupby(
+        ["area", "dwelling"])["affordable_lettings"].sum()
+    beds = lga[lga["dwelling"] != "all"].groupby("lga")["affordable_lettings"].sum()
+    s_lga = series[series["row_type"] == "lga"]
+    s_beds = s_lga[s_lga["dwelling"] != "all"].groupby(["lga", "quarter"])["affordable_lettings"].sum()
+    metro_regions = set(lgas.loc[(lgas["row_type"] == "lga") & lgas["region"].str.contains("Metro"), "lga"])
+    flags = lga.drop_duplicates("lga").set_index("lga")["metro"]
+    return {
+        "dwellings": len(vic),
+        "victoria_eq_lga_sum": int((vic == lga.groupby("dwelling")["affordable_lettings"].sum().reindex(vic.index)).sum()),
+        "area_cells": len(split),
+        "area_eq_table9": int((split == t9["affordable_lettings"].reindex(split.index)).sum()),
+        "victoria_share_eq_table9": int((latest[latest.row_type == "victoria"].set_index("dwelling")["affordable_share"]
+                                         == t9.loc["victoria", "affordable_share"].reindex(vic.index)).sum()),
+        "lgas": len(flags),
+        "lgas_missing_from_series": sorted(set(flags.index) - set(s_lga["lga"])),
+        "lgas_missing_from_latest": sorted(set(s_lga["lga"]) - set(flags.index)),
+        "metro_flag_disagrees": sorted(set(flags.index[flags]) ^ metro_regions),
+        "bedrooms_eq_all_latest": int((beds == by(lga[lga.dwelling == "all"], "lga").reindex(beds.index)).sum()),
+        "bedrooms_eq_all_series": int((s_beds == by(s_lga[s_lga.dwelling == "all"], ["lga", "quarter"])
+                                       .reindex(s_beds.index)).sum()),
+        "series_lga_quarters": len(s_beds),
+        "share_out_of_range": int(((latest["affordable_share"] < 0) | (latest["affordable_share"] > 1)).sum()),
+    }
+
+
+def affordability_revisions(series: pd.DataFrame, revised: pd.DataFrame) -> pd.DataFrame:
+    """The workbook's Victoria / Metro / Non-Metro share (all bedrooms) next to
+    the same quarter in the later report's Figure 8, quarter by quarter."""
+    s = series[(series["dwelling"] == "all") & series["row_type"].isin(["victoria", "metro", "non_metro"])]
+    s = s.rename(columns={"row_type": "area", "affordable_share": "workbook"})[["area", "quarter", "workbook"]]
+    j = s.merge(revised.rename(columns={"affordable_share": "later_report"}), on=["area", "quarter"])
+    j["difference"] = (j["later_report"] - j["workbook"]).round(3)
+    j["workbook_latest_quarter"] = j["quarter"] == series["quarter"].max()
+    return j.sort_values(["quarter", "area"]).reset_index(drop=True)
+
+
 def plausibility(suburbs: pd.DataFrame, lgas: pd.DataFrame) -> dict:
     out = {}
     for name, df in {"suburb": suburbs, "lga": lgas}.items():

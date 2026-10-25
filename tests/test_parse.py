@@ -169,3 +169,82 @@ def test_parse_table4(tmp_path):
     row = t[t.suburb == "Geelong-Newcombe"].iloc[0]
     assert (row.dwelling, row.metro, row.side, row.published_median) == ("2br_flat", False, "highest", 460)
     assert t[t.suburb == "Portland"].iloc[0].side == "lowest"
+
+
+def report_tables(flag_ararat="R", fig8_date=None):
+    """A report-tables workbook with Fig 8 source, Table 9 and Table 14 laid
+    out like the real one (labels in the same columns, blank spacer rows)."""
+    import datetime as dt
+    fig8 = [("Figure 8 source:  Affordable rental dwellings", None, None, None),
+            (None, None, None, None),
+            (None, "Victoria\n%", "Metro\n%", "Regional\n%"),
+            (dt.datetime(2025, 6, 1), 0.155, 0.102, 0.387),
+            (fig8_date or dt.datetime(2025, 9, 1), 0.144, 0.097, 0.364),
+            (None, None, None, None)]
+    t9 = [("Table 9: Rental affordability", None, None, None, None, None, None),
+          (None,) * 7,
+          ("Household type", None, "Single", "Parent", "Couple 2", "Couple 4", "Total"),
+          ("Assumed property size", None, "1 bedroom", "2 bedroom", "3 bedroom", "4+ bedroom", None),
+          ("Weekly income (net of RA)", None, 390.55, 728.39, 1083.9, 1347.2, None),
+          ("Affordable weekly rent", None, 225, 345, 450, 545, None),
+          ("Affordable rentals (number)", None, None, None, None, None, None),
+          (None, "Metropolitan Melbourne", 1, 2, 3, 4, 10),
+          (None, "Regional Victoria", 5, 6, 7, 8, 26),
+          (None, "Victoria", 6, 8, 10, 12, 36),
+          ("Affordable rentals (% of total)", None, None, None, None, None, None),
+          (None, "Metropolitan Melbourne", 0.01, 0.02, 0.03, 0.04, 0.025),
+          (None, "Regional Victoria", 0.1, 0.2, 0.3, 0.4, 0.25),
+          (None, "Victoria", 0.02, 0.04, 0.06, 0.08, 0.05)]
+    t14 = [("Table 14: Affordable rental dwellings by LGA",) + (None,) * 12,
+           (None, "1 Bedroom", None, "2 Bedrooms", None, "3 Bedrooms", None, "4+ Bedrooms", None, "Total", None, None, None),
+           (None, "Affordable", None, "Affordable", None, "Affordable", None, "Affordable", None, "Affordable", None, None, None),
+           (None, "#", "%", "#", "%", "#", "%", "#", "%", "#", "%", None, "Metro/RV"),
+           ("Alpine", 3, 0.6, 3, 0.188, 10, 0.417, 4, 0.571, 20, 0.385, None, "R"),
+           ("Banyule", 0, 0, 1, 0.003, 11, 0.032, 9, 0.068, 21, 0.022, None, "M"),
+           ("Queenscliff", 0, 0, 1, 0.1, 1, 0.1, 0, 0, 2, 0.05, None, flag_ararat),
+           ("Total", 3, 0.1, 5, 0.01, 22, 0.05, 13, 0.1, 43, 0.04),
+           (None,) * 13]
+    return {"Fig 8 source": fig8, "Table 9": t9, "Table 14": t14}
+
+
+def test_parse_fig8_and_report_quarter(tmp_path):
+    path = write_book(tmp_path / "r.xlsx", report_tables())
+    f = parse.parse_fig8(path)
+    assert len(f) == 6 and set(f.area) == {"victoria", "metro", "non_metro"}
+    assert parse.report_quarter(path) == pd.Timestamp("2025-09-30")
+    row = f[(f.area == "non_metro") & (f.quarter == pd.Timestamp("2025-06-30"))].iloc[0]
+    assert row.affordable_share == 0.387
+
+
+def test_parse_fig8_rejects_non_date(tmp_path):
+    path = write_book(tmp_path / "r.xlsx", report_tables(fig8_date="Sep 2025"))
+    with pytest.raises(ValueError, match="unexpected date"):
+        parse.parse_fig8(path)
+
+
+def test_parse_table9(tmp_path):
+    t = parse.parse_table9(write_book(tmp_path / "r.xlsx", report_tables())).set_index(["dwelling", "area"])
+    assert len(t) == 15
+    three = t.loc[("3br", "non_metro")]
+    assert (three.household, three.affordable_rent, three.affordable_lettings, three.affordable_share) == \
+        ("Couple 2", 450, 7, 0.3)
+    assert t.loc[("4br", "victoria"), "affordable_rent"] == 545
+    assert t.loc[("all", "victoria"), "affordable_lettings"] == 36
+    assert math.isnan(t.loc[("all", "metro"), "affordable_rent"])
+    assert (t["quarter"] == pd.Timestamp("2025-09-30")).all()
+
+
+def test_parse_table14(tmp_path):
+    t = parse.parse_table14(write_book(tmp_path / "r.xlsx", report_tables()))
+    assert len(t) == 4 * 5
+    assert set(t.loc[t.row_type == "lga", "lga"]) == {"Alpine", "Banyule", "Queenscliffe"}  # name fixed
+    alpine = t[(t.lga == "Alpine") & (t.dwelling == "4br")].iloc[0]
+    assert (alpine.affordable_lettings, alpine.affordable_share, alpine.metro) == (4, 0.571, False)
+    assert t[(t.lga == "Banyule")].metro.all()
+    vic = t[t.row_type == "victoria"].set_index("dwelling")
+    assert vic.loc["all", "affordable_lettings"] == 43 and vic.loc["all", "lga"] == "Victoria"
+
+
+def test_parse_table14_unknown_flag_raises(tmp_path):
+    with pytest.raises(ValueError, match="Metro/RV flag"):
+        parse.parse_table14(write_book(tmp_path / "r.xlsx", report_tables(flag_ararat="?")))
