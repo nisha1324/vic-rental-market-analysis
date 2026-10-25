@@ -1,0 +1,396 @@
+lga,metro,region,dwelling,base_affordable,base_share,latest_affordable,latest_share,base_leases,latest_leases,change,change_affordable,margin,well_sampled,clear_fall,clear_rise
+Alpine,False,Hume,1br,1,0.3330,3,0.6000,0.0000,5.0000,0.2670,2,,False,,
+Ararat,False,Grampians,1br,0,0.0000,0,0.0000,0.0000,0.0000,0.0000,0,,False,,
+Ballarat,False,Grampians,1br,9,0.1450,6,0.1280,57.0000,40.0000,-0.0170,-3,0.1381,False,False,False
+Banyule,True,North and West Metro,1br,4,0.0310,0,0.0000,117.0000,111.0000,-0.0310,-4,0.0314,True,False,False
+Bass Coast,False,Gippsland,1br,0,0.0000,0,0.0000,0.0000,0.0000,0.0000,0,,False,,
+Baw Baw,False,Gippsland,1br,0,0.0000,3,0.2500,11.0000,10.0000,0.2500,3,0.2684,False,False,False
+Bayside,True,Southern Metro,1br,0,0.0000,0,0.0000,77.0000,62.0000,0.0000,0,0.0000,False,False,False
+Benalla,False,Hume,1br,0,0.0000,0,0.0000,5.0000,6.0000,0.0000,0,0.0000,False,False,False
+Boroondara,True,Eastern Metro,1br,0,0.0000,2,0.0080,326.0000,240.0000,0.0080,2,0.0113,True,False,False
+Brimbank,True,North and West Metro,1br,1,0.0110,5,0.0820,86.0000,57.0000,0.0710,4,0.0746,False,False,False
+Buloke,False,Loddon Mallee,1br,0,0.0000,0,0.0000,0.0000,0.0000,0.0000,0,,False,,
+Campaspe,False,Loddon Mallee,1br,4,0.3330,1,0.2500,10.0000,0.0000,-0.0830,-3,,False,,
+Cardinia,True,Southern Metro,1br,0,0.0000,0,0.0000,0.0000,0.0000,0.0000,0,,False,,
+Casey,True,Southern Metro,1br,0,0.0000,3,0.1030,50.0000,15.0000,0.1030,3,0.1538,False,False,False
+Central Goldfields,False,Loddon Mallee,1br,1,0.1670,0,0.0000,6.0000,0.0000,-0.1670,-1,,False,,
+Colac-Otway,False,Barwon South West,1br,3,0.2310,0,0.0000,6.0000,9.0000,-0.2310,-3,0.3372,False,False,False
+Corangamite,False,Barwon South West,1br,1,0.5000,0,0.0000,0.0000,0.0000,-0.5000,-1,,False,,
+Darebin,True,North and West Metro,1br,4,0.0110,4,0.0140,361.0000,277.0000,0.0030,0,0.0175,True,False,False
+East Gippsland,False,Gippsland,1br,3,0.1500,1,0.0770,16.0000,12.0000,-0.0730,-2,0.2310,False,False,False
+Frankston,True,Southern Metro,1br,1,0.0090,0,0.0000,111.0000,47.0000,-0.0090,-1,0.0176,False,False,False
+Gannawarra,False,Loddon Mallee,1br,1,1.0000,0,0.0000,0.0000,0.0000,-1.0000,-1,,False,,
+Glen Eira,True,Southern Metro,1br,0,0.0000,2,0.0050,485.0000,417.0000,0.0050,2,0.0068,True,False,False
+Glenelg,False,Barwon South West,1br,0,0.0000,0,0.0000,0.0000,5.0000,0.0000,0,,False,,
+Golden Plains,False,Grampians,1br,0,0.0000,0,0.0000,0.0000,0.0000,0.0000,0,,False,,
+Greater Bendigo,False,Loddon Mallee,1br,2,0.0380,0,0.0000,45.0000,22.0000,-0.0380,-2,0.0559,False,False,False
+Greater Dandenong,True,Southern Metro,1br,1,0.0070,0,0.0000,137.0000,96.0000,-0.0070,-1,0.0140,False,False,False
+Greater Geelong,False,Barwon South West,1br,4,0.0260,8,0.0510,142.0000,140.0000,0.0250,4,0.0449,True,False,False
+Greater Shepparton,False,Hume,1br,5,0.1160,1,0.0300,43.0000,33.0000,-0.0860,-4,0.1120,False,False,False
+Hepburn,False,Grampians,1br,0,0.0000,0,0.0000,0.0000,0.0000,0.0000,0,,False,,
+Hindmarsh,False,Grampians,1br,9,1.0000,0,0.0000,9.0000,0.0000,-1.0000,-9,,False,,
+Hobsons Bay,True,North and West Metro,1br,0,0.0000,0,0.0000,47.0000,45.0000,0.0000,0,0.0000,False,False,False
+Horsham,False,Grampians,1br,3,0.3750,3,0.4290,8.0000,5.0000,0.0540,0,0.5484,False,False,False
+Hume,True,North and West Metro,1br,0,0.0000,0,0.0000,23.0000,29.0000,0.0000,0,0.0000,False,False,False
+Indigo,False,Hume,1br,1,0.3330,0,0.0000,0.0000,5.0000,-0.3330,-1,,False,,
+Kingston,True,Southern Metro,1br,1,0.0080,1,0.0100,120.0000,92.0000,0.0020,0,0.0258,False,False,False
+Knox,True,Eastern Metro,1br,0,0.0000,0,0.0000,29.0000,10.0000,0.0000,0,0.0000,False,False,False
+Latrobe,False,Gippsland,1br,23,0.3480,4,0.0750,65.0000,51.0000,-0.2730,-19,0.1365,False,True,False
+Loddon,False,Loddon Mallee,1br,2,1.0000,0,0.0000,0.0000,0.0000,-1.0000,-2,,False,,
+Macedon Ranges,False,Loddon Mallee,1br,1,0.1670,0,0.0000,0.0000,0.0000,-0.1670,-1,,False,,
+Manningham,True,Eastern Metro,1br,1,0.0140,0,0.0000,69.0000,30.0000,-0.0140,-1,0.0277,False,False,False
+Mansfield,False,Hume,1br,0,0.0000,0,0.0000,0.0000,0.0000,0.0000,0,,False,,
+Maribyrnong,True,North and West Metro,1br,2,0.0090,1,0.0050,211.0000,213.0000,-0.0040,-1,0.0159,True,False,False
+Maroondah,True,Eastern Metro,1br,1,0.0320,1,0.0420,26.0000,18.0000,0.0100,0,0.1147,False,False,False
+Melbourne,True,North and West Metro,1br,8,0.0030,14,0.0050,2311.0000,2935.0000,0.0020,6,0.0034,True,False,False
+Melton,True,North and West Metro,1br,1,0.0670,1,0.0710,13.0000,13.0000,0.0040,0,0.1948,False,False,False
+Merri-bek,True,North and West Metro,1br,1,0.0020,13,0.0320,434.0000,394.0000,0.0300,12,0.0179,True,False,True
+Mildura,False,Loddon Mallee,1br,18,0.4290,8,0.3080,41.0000,24.0000,-0.1210,-10,0.2389,False,False,False
+Mitchell,False,Hume,1br,0,0.0000,1,0.2500,0.0000,0.0000,0.2500,1,,False,,
+Moira,False,Hume,1br,11,0.7330,4,0.5000,15.0000,7.0000,-0.2330,-7,0.4328,False,False,False
+Monash,True,Eastern Metro,1br,2,0.0170,5,0.0320,109.0000,148.0000,0.0150,3,0.0373,True,False,False
+Moonee Valley,True,North and West Metro,1br,2,0.0070,3,0.0150,298.0000,201.0000,0.0080,1,0.0193,True,False,False
+Moorabool,False,Grampians,1br,3,0.3330,0,0.0000,8.0000,0.0000,-0.3330,-3,,False,,
+Mornington Peninsula,True,Southern Metro,1br,0,0.0000,0,0.0000,6.0000,14.0000,0.0000,0,0.0000,False,False,False
+Mount Alexander,False,Loddon Mallee,1br,0,0.0000,0,0.0000,0.0000,0.0000,0.0000,0,,False,,
+Moyne,False,Barwon South West,1br,0,0.0000,0,0.0000,0.0000,0.0000,0.0000,0,,False,,
+Murrindindi,False,Hume,1br,0,0.0000,0,0.0000,0.0000,0.0000,0.0000,0,,False,,
+Nillumbik,True,North and West Metro,1br,1,0.1250,1,0.0710,7.0000,10.0000,-0.0540,0,0.2922,False,False,False
+Northern Grampians,False,Grampians,1br,1,0.2000,1,0.2500,0.0000,0.0000,0.0500,0,,False,,
+Port Phillip,True,Southern Metro,1br,0,0.0000,2,0.0030,732.0000,654.0000,0.0030,2,0.0042,True,False,False
+Pyrenees,False,Grampians,1br,1,1.0000,0,0.0000,0.0000,0.0000,-1.0000,-1,,False,,
+Queenscliffe,False,Barwon South West,1br,0,0.0000,0,0.0000,0.0000,0.0000,0.0000,0,,False,,
+South Gippsland,False,Gippsland,1br,1,0.2500,0,0.0000,0.0000,0.0000,-0.2500,-1,,False,,
+Southern Grampians,False,Barwon South West,1br,2,0.2860,0,0.0000,7.0000,5.0000,-0.2860,-2,0.3348,False,False,False
+Stonnington,True,Southern Metro,1br,0,0.0000,6,0.0080,875.0000,756.0000,0.0080,6,0.0064,True,False,True
+Strathbogie,False,Hume,1br,0,0.0000,0,0.0000,6.0000,0.0000,0.0000,0,,False,,
+Surf Coast,False,Barwon South West,1br,0,0.0000,0,0.0000,8.0000,8.0000,0.0000,0,0.0000,False,False,False
+Swan Hill,False,Loddon Mallee,1br,6,0.6670,1,0.0830,9.0000,12.0000,-0.5840,-5,0.3452,False,True,False
+Towong,False,Hume,1br,1,0.5000,0,0.0000,0.0000,0.0000,-0.5000,-1,,False,,
+Wangaratta,False,Hume,1br,0,0.0000,4,0.3330,16.0000,10.0000,0.3330,4,0.2921,False,False,True
+Warrnambool,False,Barwon South West,1br,2,0.1250,0,0.0000,16.0000,10.0000,-0.1250,-2,0.1621,False,False,False
+Wellington,False,Gippsland,1br,2,0.0690,0,0.0000,26.0000,5.0000,-0.0690,-2,0.0974,False,False,False
+West Wimmera,False,Grampians,1br,1,1.0000,0,0.0000,0.0000,0.0000,-1.0000,-1,,False,,
+Whitehorse,True,Eastern Metro,1br,0,0.0000,4,0.0220,192.0000,176.0000,0.0220,4,0.0217,True,False,True
+Whittlesea,True,North and West Metro,1br,0,0.0000,1,0.0500,31.0000,16.0000,0.0500,1,0.1068,False,False,False
+Wodonga,False,Hume,1br,2,0.1540,2,0.1180,10.0000,17.0000,-0.0360,0,0.2712,False,False,False
+Wyndham,True,North and West Metro,1br,1,0.0360,3,0.1580,20.0000,13.0000,0.1220,2,0.2144,False,False,False
+Yarra,True,North and West Metro,1br,0,0.0000,5,0.0090,687.0000,522.0000,0.0090,5,0.0081,True,False,True
+Yarra Ranges,True,Eastern Metro,1br,0,0.0000,0,0.0000,34.0000,21.0000,0.0000,0,0.0000,False,False,False
+Yarriambiack,False,Grampians,1br,3,1.0000,0,0.0000,0.0000,0.0000,-1.0000,-3,,False,,
+Alpine,False,Hume,2br,11,0.4230,3,0.1880,26.0000,16.0000,-0.2350,-8,0.2697,False,False,False
+Ararat,False,Grampians,2br,15,0.7500,12,0.6000,20.0000,20.0000,-0.1500,-3,0.2866,False,False,False
+Ballarat,False,Grampians,2br,120,0.5060,43,0.2650,223.0000,159.0000,-0.2410,-77,0.0949,True,True,False
+Banyule,True,North and West Metro,2br,6,0.0140,1,0.0030,391.0000,332.0000,-0.0110,-5,0.0130,True,False,False
+Bass Coast,False,Gippsland,2br,17,0.3330,7,0.1370,31.0000,27.0000,-0.1960,-10,0.2106,False,False,False
+Baw Baw,False,Gippsland,2br,24,0.3120,2,0.0440,77.0000,45.0000,-0.2680,-22,0.1196,False,True,False
+Bayside,True,Southern Metro,2br,1,0.0030,0,0.0000,297.0000,241.0000,-0.0030,-1,0.0062,True,False,False
+Benalla,False,Hume,2br,19,0.7040,1,0.0480,26.0000,21.0000,-0.6560,-18,0.1979,False,True,False
+Boroondara,True,Eastern Metro,2br,2,0.0030,3,0.0050,739.0000,592.0000,0.0020,1,0.0069,True,False,False
+Brimbank,True,North and West Metro,2br,14,0.0510,44,0.1460,240.0000,270.0000,0.0950,30,0.0505,True,False,True
+Buloke,False,Loddon Mallee,2br,1,0.5000,2,0.6670,0.0000,0.0000,0.1670,1,,False,,
+Campaspe,False,Loddon Mallee,2br,37,0.6070,8,0.1860,60.0000,42.0000,-0.4210,-29,0.1707,False,True,False
+Cardinia,True,Southern Metro,2br,3,0.0370,1,0.0170,71.0000,47.0000,-0.0200,-2,0.0574,False,False,False
+Casey,True,Southern Metro,2br,7,0.0330,1,0.0060,201.0000,144.0000,-0.0270,-6,0.0277,True,False,False
+Central Goldfields,False,Loddon Mallee,2br,16,0.8420,4,0.5000,19.0000,6.0000,-0.3420,-12,0.4324,False,False,False
+Colac-Otway,False,Barwon South West,2br,12,0.4620,4,0.2000,26.0000,20.0000,-0.2620,-8,0.2597,False,False,False
+Corangamite,False,Barwon South West,2br,18,0.7500,7,0.4380,24.0000,12.0000,-0.3120,-11,0.3299,False,False,False
+Darebin,True,North and West Metro,2br,14,0.0170,7,0.0110,736.0000,604.0000,-0.0060,-7,0.0125,True,False,False
+East Gippsland,False,Gippsland,2br,40,0.6250,10,0.1750,61.0000,57.0000,-0.4500,-30,0.1565,False,True,False
+Frankston,True,Southern Metro,2br,21,0.0730,2,0.0110,273.0000,178.0000,-0.0620,-19,0.0345,True,False,False
+Gannawarra,False,Loddon Mallee,2br,16,1.0000,5,1.0000,16.0000,0.0000,0.0000,-11,,False,,
+Glen Eira,True,Southern Metro,2br,7,0.0080,10,0.0120,844.0000,806.0000,0.0040,3,0.0096,True,False,False
+Glenelg,False,Barwon South West,2br,28,0.7780,14,0.5190,36.0000,27.0000,-0.2590,-14,0.2323,False,False,False
+Golden Plains,False,Grampians,2br,1,0.1430,3,0.3000,0.0000,10.0000,0.1570,2,,False,,
+Greater Bendigo,False,Loddon Mallee,2br,89,0.3970,16,0.1130,220.0000,135.0000,-0.2840,-73,0.0839,True,True,False
+Greater Dandenong,True,Southern Metro,2br,26,0.0550,2,0.0060,436.0000,317.0000,-0.0490,-24,0.0230,True,False,False
+Greater Geelong,False,Barwon South West,2br,59,0.1200,15,0.0370,481.0000,399.0000,-0.0830,-44,0.0344,True,True,False
+Greater Shepparton,False,Hume,2br,84,0.7120,20,0.1670,107.0000,120.0000,-0.5450,-64,0.1087,True,True,False
+Hepburn,False,Grampians,2br,2,0.1250,3,0.1500,13.0000,17.0000,0.0250,1,0.2473,False,False,False
+Hindmarsh,False,Grampians,2br,6,1.0000,1,1.0000,5.0000,0.0000,0.0000,-5,,False,,
+Hobsons Bay,True,North and West Metro,2br,5,0.0190,4,0.0190,232.0000,200.0000,0.0000,-1,0.0258,True,False,False
+Horsham,False,Grampians,2br,36,0.7350,10,0.3450,49.0000,29.0000,-0.3900,-26,0.2126,False,True,False
+Hume,True,North and West Metro,2br,1,0.0040,4,0.0190,194.0000,171.0000,0.0150,3,0.0223,True,False,False
+Indigo,False,Hume,2br,12,0.6000,1,0.0670,19.0000,15.0000,-0.5330,-11,0.2540,False,True,False
+Kingston,True,Southern Metro,2br,5,0.0080,5,0.0130,569.0000,380.0000,0.0050,0,0.0135,True,False,False
+Knox,True,Eastern Metro,2br,2,0.0100,3,0.0220,193.0000,129.0000,0.0120,1,0.0289,True,False,False
+Latrobe,False,Gippsland,2br,137,0.8460,51,0.4510,160.0000,113.0000,-0.3950,-86,0.1075,True,True,False
+Loddon,False,Loddon Mallee,2br,0,0.0000,2,0.6670,0.0000,0.0000,0.6670,2,,False,,
+Macedon Ranges,False,Loddon Mallee,2br,1,0.0260,0,0.0000,37.0000,27.0000,-0.0260,-1,0.0513,False,False,False
+Manningham,True,Eastern Metro,2br,3,0.0120,0,0.0000,236.0000,147.0000,-0.0120,-3,0.0139,True,False,False
+Mansfield,False,Hume,2br,5,0.3330,3,0.3750,15.0000,8.0000,0.0420,-2,0.4116,False,False,False
+Maribyrnong,True,North and West Metro,2br,3,0.0050,5,0.0100,485.0000,493.0000,0.0050,2,0.0108,True,False,False
+Maroondah,True,Eastern Metro,2br,4,0.0120,1,0.0060,325.0000,158.0000,-0.0060,-3,0.0169,True,False,False
+Melbourne,True,North and West Metro,2br,48,0.0180,31,0.0090,2646.0000,3297.0000,-0.0090,-17,0.0060,True,False,False
+Melton,True,North and West Metro,2br,7,0.0670,8,0.0840,95.0000,81.0000,0.0170,1,0.0786,False,False,False
+Merri-bek,True,North and West Metro,2br,3,0.0030,29,0.0310,911.0000,885.0000,0.0280,26,0.0120,True,False,True
+Mildura,False,Loddon Mallee,2br,83,0.7350,35,0.3890,111.0000,88.0000,-0.3460,-48,0.1308,False,True,False
+Mitchell,False,Hume,2br,12,0.3870,6,0.1820,31.0000,32.0000,-0.2050,-6,0.2174,False,False,False
+Moira,False,Hume,2br,42,0.7370,4,0.1740,54.0000,19.0000,-0.5630,-38,0.2070,False,True,False
+Monash,True,Eastern Metro,2br,2,0.0050,4,0.0090,405.0000,451.0000,0.0040,2,0.0111,True,False,False
+Moonee Valley,True,North and West Metro,2br,4,0.0070,8,0.0180,530.0000,415.0000,0.0110,4,0.0146,True,False,False
+Moorabool,False,Grampians,2br,7,0.2920,12,0.3640,22.0000,32.0000,0.0720,5,0.2528,False,False,False
+Mornington Peninsula,True,Southern Metro,2br,14,0.0530,0,0.0000,251.0000,153.0000,-0.0530,-14,0.0277,True,False,False
+Mount Alexander,False,Loddon Mallee,2br,1,0.0370,0,0.0000,26.0000,13.0000,-0.0370,-1,0.0726,False,False,False
+Moyne,False,Barwon South West,2br,5,0.2780,0,0.0000,18.0000,6.0000,-0.2780,-5,0.2070,False,True,False
+Murrindindi,False,Hume,2br,4,0.3640,6,0.5000,11.0000,11.0000,0.1360,2,0.4101,False,False,False
+Nillumbik,True,North and West Metro,2br,0,0.0000,0,0.0000,42.0000,18.0000,0.0000,0,0.0000,False,False,False
+Northern Grampians,False,Grampians,2br,9,0.9000,6,0.6000,10.0000,6.0000,-0.3000,-3,0.4339,False,False,False
+Port Phillip,True,Southern Metro,2br,8,0.0080,6,0.0070,969.0000,822.0000,-0.0010,-2,0.0080,True,False,False
+Pyrenees,False,Grampians,2br,2,1.0000,1,0.1670,0.0000,6.0000,-0.8330,-1,,False,,
+Queenscliffe,False,Barwon South West,2br,0,0.0000,0,0.0000,0.0000,0.0000,0.0000,0,,False,,
+South Gippsland,False,Gippsland,2br,14,0.5830,2,0.1330,24.0000,15.0000,-0.4500,-12,0.2616,False,True,False
+Southern Grampians,False,Barwon South West,2br,15,1.0000,8,0.5000,14.0000,15.0000,-0.5000,-7,0.2530,False,True,False
+Stonnington,True,Southern Metro,2br,8,0.0070,5,0.0060,1031.0000,851.0000,-0.0010,-3,0.0073,True,False,False
+Strathbogie,False,Hume,2br,11,0.5500,1,0.1000,20.0000,8.0000,-0.4500,-10,0.3013,False,True,False
+Surf Coast,False,Barwon South West,2br,1,0.0210,1,0.0500,46.0000,19.0000,0.0290,0,0.1064,False,False,False
+Swan Hill,False,Loddon Mallee,2br,32,0.9410,10,0.5000,33.0000,20.0000,-0.4410,-22,0.2334,False,True,False
+Towong,False,Hume,2br,4,1.0000,2,0.6670,0.0000,0.0000,-0.3330,-2,,False,,
+Wangaratta,False,Hume,2br,34,0.6300,10,0.2560,52.0000,38.0000,-0.3740,-24,0.1910,False,True,False
+Warrnambool,False,Barwon South West,2br,40,0.4490,15,0.1810,83.0000,80.0000,-0.2680,-25,0.1363,False,True,False
+Wellington,False,Gippsland,2br,54,0.7110,15,0.3130,74.0000,48.0000,-0.3980,-39,0.1670,False,True,False
+West Wimmera,False,Grampians,2br,0,0.0000,1,1.0000,0.0000,0.0000,1.0000,1,,False,,
+Whitehorse,True,Eastern Metro,2br,1,0.0020,4,0.0080,549.0000,511.0000,0.0060,3,0.0086,True,False,False
+Whittlesea,True,North and West Metro,2br,5,0.0180,8,0.0390,205.0000,172.0000,0.0210,3,0.0342,True,False,False
+Wodonga,False,Hume,2br,63,0.7080,12,0.1970,86.0000,58.0000,-0.5110,-51,0.1404,False,True,False
+Wyndham,True,North and West Metro,2br,7,0.0280,23,0.1070,231.0000,200.0000,0.0790,16,0.0478,True,False,True
+Yarra,True,North and West Metro,2br,4,0.0050,7,0.0110,783.0000,607.0000,0.0060,3,0.0097,True,False,False
+Yarra Ranges,True,Eastern Metro,2br,2,0.0160,1,0.0110,117.0000,88.0000,-0.0050,-1,0.0315,False,False,False
+Yarriambiack,False,Grampians,2br,2,1.0000,1,1.0000,0.0000,0.0000,0.0000,-1,,False,,
+Alpine,False,Hume,3br,18,0.4620,10,0.4170,34.0000,22.0000,-0.0450,-8,0.2656,False,False,False
+Ararat,False,Grampians,3br,27,0.7710,24,0.6860,34.0000,32.0000,-0.0850,-3,0.2140,False,False,False
+Ballarat,False,Grampians,3br,269,0.5360,388,0.8920,491.0000,430.0000,0.3560,119,0.0530,True,False,True
+Banyule,True,North and West Metro,3br,10,0.0230,11,0.0320,368.0000,295.0000,0.0090,1,0.0253,True,False,False
+Bass Coast,False,Gippsland,3br,78,0.4730,52,0.4680,87.0000,62.0000,-0.0050,-26,0.1626,False,False,False
+Baw Baw,False,Gippsland,3br,54,0.3940,24,0.2180,136.0000,109.0000,-0.1760,-30,0.1129,True,True,False
+Bayside,True,Southern Metro,3br,1,0.0040,0,0.0000,224.0000,153.0000,-0.0040,-1,0.0083,True,False,False
+Benalla,False,Hume,3br,25,0.5950,19,0.5000,40.0000,37.0000,-0.0950,-6,0.2216,False,False,False
+Boroondara,True,Eastern Metro,3br,8,0.0230,2,0.0070,307.0000,261.0000,-0.0160,-6,0.0196,True,False,False
+Brimbank,True,North and West Metro,3br,65,0.0900,137,0.2400,662.0000,535.0000,0.1500,72,0.0422,True,False,True
+Buloke,False,Loddon Mallee,3br,9,1.0000,4,1.0000,9.0000,0.0000,0.0000,-5,,False,,
+Campaspe,False,Loddon Mallee,3br,51,0.5260,24,0.3810,96.0000,59.0000,-0.1450,-27,0.1592,False,False,False
+Cardinia,True,Southern Metro,3br,67,0.1580,11,0.0320,380.0000,308.0000,-0.1260,-56,0.0416,True,True,False
+Casey,True,Southern Metro,3br,104,0.0920,24,0.0250,1070.0000,906.0000,-0.0670,-80,0.0201,True,True,False
+Central Goldfields,False,Loddon Mallee,3br,41,0.9320,24,1.0000,41.0000,24.0000,0.0680,-17,0.0771,False,False,False
+Colac-Otway,False,Barwon South West,3br,30,0.4760,14,0.4240,62.0000,32.0000,-0.0520,-16,0.2116,False,False,False
+Corangamite,False,Barwon South West,3br,27,0.9000,14,0.7780,29.0000,16.0000,-0.1220,-13,0.2311,False,False,False
+Darebin,True,North and West Metro,3br,16,0.0370,10,0.0300,371.0000,310.0000,-0.0070,-6,0.0270,True,False,False
+East Gippsland,False,Gippsland,3br,84,0.6410,46,0.4840,129.0000,95.0000,-0.1570,-38,0.1302,False,False,False
+Frankston,True,Southern Metro,3br,57,0.0930,5,0.0110,579.0000,439.0000,-0.0820,-52,0.0256,True,True,False
+Gannawarra,False,Loddon Mallee,3br,24,0.9600,10,0.8330,25.0000,10.0000,-0.1270,-14,0.2436,False,False,False
+Glen Eira,True,Southern Metro,3br,6,0.0130,8,0.0210,374.0000,346.0000,0.0080,2,0.0190,True,False,False
+Glenelg,False,Barwon South West,3br,45,0.7890,26,0.6840,57.0000,37.0000,-0.1050,-19,0.1835,False,False,False
+Golden Plains,False,Grampians,3br,6,0.2500,7,0.4120,24.0000,17.0000,0.1620,1,0.2911,False,False,False
+Greater Bendigo,False,Loddon Mallee,3br,201,0.5030,86,0.2470,387.0000,337.0000,-0.2560,-115,0.0678,True,True,False
+Greater Dandenong,True,Southern Metro,3br,34,0.0600,13,0.0330,514.0000,369.0000,-0.0270,-21,0.0275,True,False,False
+Greater Geelong,False,Barwon South West,3br,223,0.2160,224,0.2420,1018.0000,911.0000,0.0260,1,0.0376,True,False,False
+Greater Shepparton,False,Hume,3br,128,0.6600,93,0.3970,185.0000,234.0000,-0.2630,-35,0.0927,True,True,False
+Hepburn,False,Grampians,3br,9,0.2900,12,0.3750,30.0000,29.0000,0.0850,3,0.2396,False,False,False
+Hindmarsh,False,Grampians,3br,18,1.0000,15,0.9380,18.0000,16.0000,-0.0620,-3,0.1182,False,False,False
+Hobsons Bay,True,North and West Metro,3br,13,0.0360,9,0.0320,295.0000,260.0000,-0.0040,-4,0.0302,True,False,False
+Horsham,False,Grampians,3br,71,0.7320,32,0.5250,97.0000,61.0000,-0.2070,-39,0.1532,False,True,False
+Hume,True,North and West Metro,3br,43,0.0550,106,0.1400,705.0000,715.0000,0.0850,63,0.0305,True,False,True
+Indigo,False,Hume,3br,19,0.4870,5,0.2940,39.0000,16.0000,-0.1930,-14,0.2728,False,False,False
+Kingston,True,Southern Metro,3br,5,0.0100,3,0.0090,408.0000,310.0000,-0.0010,-2,0.0143,True,False,False
+Knox,True,Eastern Metro,3br,7,0.0140,7,0.0230,467.0000,301.0000,0.0090,0,0.0200,True,False,False
+Latrobe,False,Gippsland,3br,212,0.8510,174,0.6370,248.0000,271.0000,-0.2140,-38,0.0724,True,True,False
+Loddon,False,Loddon Mallee,3br,7,1.0000,1,0.5000,7.0000,0.0000,-0.5000,-6,,False,,
+Macedon Ranges,False,Loddon Mallee,3br,8,0.0900,1,0.0150,85.0000,66.0000,-0.0750,-7,0.0675,False,False,False
+Manningham,True,Eastern Metro,3br,2,0.0060,1,0.0050,284.0000,188.0000,-0.0010,-1,0.0135,True,False,False
+Mansfield,False,Hume,3br,2,0.1430,1,0.0710,11.0000,13.0000,-0.0720,-1,0.2496,False,False,False
+Maribyrnong,True,North and West Metro,3br,13,0.0350,13,0.0400,286.0000,287.0000,0.0050,0,0.0311,True,False,False
+Maroondah,True,Eastern Metro,3br,3,0.0090,4,0.0200,300.0000,199.0000,0.0110,1,0.0222,True,False,False
+Melbourne,True,North and West Metro,3br,18,0.0410,23,0.0450,370.0000,487.0000,0.0040,5,0.0273,True,False,False
+Melton,True,North and West Metro,3br,190,0.2830,494,0.5420,618.0000,856.0000,0.2590,304,0.0487,True,False,True
+Merri-bek,True,North and West Metro,3br,13,0.0210,7,0.0150,497.0000,392.0000,-0.0060,-6,0.0174,True,False,False
+Mildura,False,Loddon Mallee,3br,137,0.5810,84,0.3650,231.0000,227.0000,-0.2160,-53,0.0893,True,True,False
+Mitchell,False,Hume,3br,49,0.3480,57,0.6870,139.0000,82.0000,0.3390,8,0.1278,False,False,True
+Moira,False,Hume,3br,59,0.6940,30,0.4620,77.0000,58.0000,-0.2320,-29,0.1645,False,True,False
+Monash,True,Eastern Metro,3br,9,0.0150,17,0.0360,532.0000,449.0000,0.0210,8,0.0201,True,False,True
+Moonee Valley,True,North and West Metro,3br,6,0.0180,5,0.0190,244.0000,224.0000,0.0010,-1,0.0245,True,False,False
+Moorabool,False,Grampians,3br,15,0.1650,17,0.3540,88.0000,47.0000,0.1890,2,0.1572,False,False,True
+Mornington Peninsula,True,Southern Metro,3br,42,0.0690,7,0.0160,568.0000,406.0000,-0.0530,-35,0.0242,True,False,False
+Mount Alexander,False,Loddon Mallee,3br,9,0.2730,6,0.2140,33.0000,28.0000,-0.0590,-3,0.2149,False,False,False
+Moyne,False,Barwon South West,3br,18,0.5000,8,0.2960,36.0000,26.0000,-0.2040,-10,0.2397,False,False,False
+Murrindindi,False,Hume,3br,30,0.6980,17,0.8950,43.0000,19.0000,0.1970,-13,0.1945,False,False,True
+Nillumbik,True,North and West Metro,3br,1,0.0080,3,0.0330,96.0000,79.0000,0.0250,2,0.0432,False,False,False
+Northern Grampians,False,Grampians,3br,20,0.8700,12,0.6670,21.0000,18.0000,-0.2030,-8,0.2609,False,False,False
+Port Phillip,True,Southern Metro,3br,5,0.0190,1,0.0040,207.0000,241.0000,-0.0150,-4,0.0202,True,False,False
+Pyrenees,False,Grampians,3br,5,0.4550,4,0.8000,11.0000,5.0000,0.3450,-1,0.4577,False,False,False
+Queenscliffe,False,Barwon South West,3br,0,0.0000,0,0.0000,0.0000,0.0000,0.0000,0,,False,,
+South Gippsland,False,Gippsland,3br,64,0.8210,26,0.6190,73.0000,40.0000,-0.2020,-38,0.1743,False,False,False
+Southern Grampians,False,Barwon South West,3br,44,0.8630,25,0.9260,50.0000,26.0000,0.0630,-19,0.1386,False,False,False
+Stonnington,True,Southern Metro,3br,19,0.0620,6,0.0250,266.0000,228.0000,-0.0370,-13,0.0354,True,False,False
+Strathbogie,False,Hume,3br,19,0.6330,7,0.3330,27.0000,20.0000,-0.3000,-12,0.2752,False,False,False
+Surf Coast,False,Barwon South West,3br,5,0.0410,3,0.0260,115.0000,107.0000,-0.0150,-2,0.0471,True,False,False
+Swan Hill,False,Loddon Mallee,3br,38,0.7920,16,0.4320,48.0000,37.0000,-0.3600,-22,0.1966,False,True,False
+Towong,False,Hume,3br,11,0.9170,4,1.0000,12.0000,0.0000,0.0830,-7,,False,,
+Wangaratta,False,Hume,3br,51,0.6460,15,0.3060,78.0000,49.0000,-0.3400,-36,0.1671,False,True,False
+Warrnambool,False,Barwon South West,3br,29,0.2870,8,0.0780,99.0000,102.0000,-0.2090,-21,0.1032,False,True,False
+Wellington,False,Gippsland,3br,86,0.7230,41,0.5770,118.0000,67.0000,-0.1460,-45,0.1432,False,False,False
+West Wimmera,False,Grampians,3br,3,1.0000,5,1.0000,0.0000,5.0000,0.0000,2,,False,,
+Whitehorse,True,Eastern Metro,3br,7,0.0120,6,0.0140,524.0000,390.0000,0.0020,-1,0.0149,True,False,False
+Whittlesea,True,North and West Metro,3br,20,0.0340,43,0.0700,514.0000,565.0000,0.0360,23,0.0262,True,False,True
+Wodonga,False,Hume,3br,85,0.5150,19,0.1140,161.0000,159.0000,-0.4010,-66,0.0917,True,True,False
+Wyndham,True,North and West Metro,3br,191,0.1860,510,0.4700,958.0000,1043.0000,0.2840,319,0.0390,True,False,True
+Yarra,True,North and West Metro,3br,6,0.0220,8,0.0370,205.0000,179.0000,0.0150,2,0.0342,True,False,False
+Yarra Ranges,True,Eastern Metro,3br,4,0.0120,10,0.0550,311.0000,174.0000,0.0430,6,0.0360,True,False,True
+Yarriambiack,False,Grampians,3br,15,1.0000,8,1.0000,15.0000,8.0000,0.0000,-7,0.0000,False,False,False
+Alpine,False,Hume,4br,2,0.5000,4,0.5710,0.0000,7.0000,0.0710,2,,False,,
+Ararat,False,Grampians,4br,14,0.8240,13,0.8670,15.0000,14.0000,0.0430,-1,0.2623,False,False,False
+Ballarat,False,Grampians,4br,132,0.6060,317,0.8570,203.0000,350.0000,0.2510,185,0.0766,True,False,True
+Banyule,True,North and West Metro,4br,9,0.0600,9,0.0680,100.0000,92.0000,0.0080,0,0.0694,False,False,False
+Bass Coast,False,Gippsland,4br,40,0.5560,25,0.3380,29.0000,44.0000,-0.2180,-15,0.2286,False,False,False
+Baw Baw,False,Gippsland,4br,48,0.4710,12,0.0990,96.0000,116.0000,-0.3720,-36,0.1137,False,True,False
+Bayside,True,Southern Metro,4br,3,0.0170,0,0.0000,111.0000,88.0000,-0.0170,-3,0.0240,False,False,False
+Benalla,False,Hume,4br,9,0.6000,10,0.2560,12.0000,36.0000,-0.3440,1,0.3117,False,False,False
+Boroondara,True,Eastern Metro,4br,2,0.0080,5,0.0260,176.0000,123.0000,0.0180,3,0.0311,True,False,False
+Brimbank,True,North and West Metro,4br,68,0.3130,44,0.2260,152.0000,164.0000,-0.0870,-24,0.0976,True,False,False
+Buloke,False,Loddon Mallee,4br,1,1.0000,3,1.0000,0.0000,0.0000,0.0000,2,,False,,
+Campaspe,False,Loddon Mallee,4br,15,0.5170,8,0.2960,29.0000,23.0000,-0.2210,-7,0.2605,False,False,False
+Cardinia,True,Southern Metro,4br,202,0.6160,26,0.0720,301.0000,330.0000,-0.5440,-176,0.0616,True,True,False
+Casey,True,Southern Metro,4br,360,0.4070,33,0.0290,807.0000,981.0000,-0.3780,-327,0.0355,True,True,False
+Central Goldfields,False,Loddon Mallee,4br,2,1.0000,5,1.0000,0.0000,5.0000,0.0000,3,,False,,
+Colac-Otway,False,Barwon South West,4br,13,0.6500,10,0.5880,20.0000,16.0000,-0.0620,-3,0.3192,False,False,False
+Corangamite,False,Barwon South West,4br,10,0.4760,4,0.5710,21.0000,7.0000,0.0950,-6,0.4243,False,False,False
+Darebin,True,North and West Metro,4br,14,0.1750,2,0.0250,59.0000,60.0000,-0.1500,-12,0.1047,False,True,False
+East Gippsland,False,Gippsland,4br,39,0.7960,39,0.4940,45.0000,76.0000,-0.3020,0,0.1628,False,True,False
+Frankston,True,Southern Metro,4br,41,0.2170,7,0.0390,160.0000,151.0000,-0.1780,-34,0.0709,True,True,False
+Gannawarra,False,Loddon Mallee,4br,9,0.9000,1,0.5000,9.0000,0.0000,-0.4000,-8,,False,,
+Glen Eira,True,Southern Metro,4br,24,0.1190,2,0.0100,112.0000,132.0000,-0.1090,-22,0.0623,True,True,False
+Glenelg,False,Barwon South West,4br,12,0.8000,1,0.2500,13.0000,0.0000,-0.5500,-11,,False,,
+Golden Plains,False,Grampians,4br,6,0.3530,14,0.5380,16.0000,24.0000,0.1850,8,0.3076,False,False,False
+Greater Bendigo,False,Loddon Mallee,4br,102,0.6340,67,0.3320,147.0000,192.0000,-0.3020,-35,0.1025,True,True,False
+Greater Dandenong,True,Southern Metro,4br,26,0.1380,6,0.0380,140.0000,120.0000,-0.1000,-20,0.0666,True,False,False
+Greater Geelong,False,Barwon South West,4br,164,0.3040,202,0.3360,489.0000,543.0000,0.0320,38,0.0569,True,False,False
+Greater Shepparton,False,Hume,4br,44,0.5710,28,0.2800,70.0000,93.0000,-0.2910,-16,0.1475,False,True,False
+Hepburn,False,Grampians,4br,7,0.5830,2,0.2860,11.0000,6.0000,-0.2970,-5,0.4644,False,False,False
+Hindmarsh,False,Grampians,4br,1,1.0000,2,1.0000,0.0000,0.0000,0.0000,1,,False,,
+Hobsons Bay,True,North and West Metro,4br,10,0.1120,5,0.0570,58.0000,55.0000,-0.0550,-5,0.1017,False,False,False
+Horsham,False,Grampians,4br,9,0.5000,5,0.5000,18.0000,9.0000,0.0000,-4,0.4001,False,False,False
+Hume,True,North and West Metro,4br,131,0.2710,222,0.2930,445.0000,686.0000,0.0220,91,0.0535,True,False,False
+Indigo,False,Hume,4br,6,0.6000,1,0.0830,9.0000,12.0000,-0.5170,-5,0.3561,False,True,False
+Kingston,True,Southern Metro,4br,6,0.0360,3,0.0170,121.0000,115.0000,-0.0190,-3,0.0407,True,False,False
+Knox,True,Eastern Metro,4br,17,0.0750,1,0.0060,179.0000,131.0000,-0.0690,-16,0.0408,True,False,False
+Latrobe,False,Gippsland,4br,60,0.7230,49,0.4050,70.0000,112.0000,-0.3180,-11,0.1388,False,True,False
+Loddon,False,Loddon Mallee,4br,1,1.0000,0,0.0000,0.0000,0.0000,-1.0000,-1,,False,,
+Macedon Ranges,False,Loddon Mallee,4br,0,0.0000,6,0.1130,52.0000,51.0000,0.1130,6,0.0869,False,False,True
+Manningham,True,Eastern Metro,4br,10,0.0380,6,0.0260,184.0000,160.0000,-0.0120,-4,0.0370,True,False,False
+Mansfield,False,Hume,4br,6,0.5000,0,0.0000,12.0000,7.0000,-0.5000,-6,0.2829,False,True,False
+Maribyrnong,True,North and West Metro,4br,10,0.1190,0,0.0000,57.0000,49.0000,-0.1190,-10,0.0841,False,True,False
+Maroondah,True,Eastern Metro,4br,6,0.0510,3,0.0330,85.0000,66.0000,-0.0180,-3,0.0636,False,False,False
+Melbourne,True,North and West Metro,4br,14,0.2090,10,0.1330,23.0000,26.0000,-0.0760,-4,0.2113,False,False,False
+Melton,True,North and West Metro,4br,412,0.5580,906,0.6570,695.0000,1273.0000,0.0990,494,0.0452,True,False,True
+Merri-bek,True,North and West Metro,4br,7,0.0660,1,0.0110,70.0000,61.0000,-0.0550,-6,0.0638,False,False,False
+Mildura,False,Loddon Mallee,4br,48,0.6860,28,0.3840,62.0000,68.0000,-0.3020,-20,0.1634,False,True,False
+Mitchell,False,Hume,4br,89,0.7060,276,0.8790,119.0000,303.0000,0.1730,187,0.0897,True,False,True
+Moira,False,Hume,4br,26,0.8390,16,0.3270,27.0000,46.0000,-0.5120,-10,0.1939,False,True,False
+Monash,True,Eastern Metro,4br,30,0.0790,17,0.0420,207.0000,234.0000,-0.0370,-13,0.0448,True,False,False
+Moonee Valley,True,North and West Metro,4br,16,0.1580,0,0.0000,62.0000,47.0000,-0.1580,-16,0.0908,False,True,False
+Moorabool,False,Grampians,4br,38,0.6550,41,0.6120,55.0000,62.0000,-0.0430,3,0.1746,False,False,False
+Mornington Peninsula,True,Southern Metro,4br,23,0.0970,6,0.0240,184.0000,179.0000,-0.0730,-17,0.0483,True,False,False
+Mount Alexander,False,Loddon Mallee,4br,7,0.4380,1,0.0910,15.0000,9.0000,-0.3470,-6,0.3136,False,False,False
+Moyne,False,Barwon South West,4br,3,0.4290,2,0.2860,7.0000,6.0000,-0.1430,-1,0.5150,False,False,False
+Murrindindi,False,Hume,4br,3,0.6000,4,0.5710,5.0000,7.0000,-0.0290,1,0.5647,False,False,False
+Nillumbik,True,North and West Metro,4br,57,0.3630,15,0.1520,145.0000,87.0000,-0.2110,-42,0.1087,False,True,False
+Northern Grampians,False,Grampians,4br,13,1.0000,4,0.3080,13.0000,13.0000,-0.6920,-9,0.2510,False,True,False
+Port Phillip,True,Southern Metro,4br,4,0.0770,2,0.0330,30.0000,32.0000,-0.0440,-2,0.1137,False,False,False
+Pyrenees,False,Grampians,4br,4,1.0000,2,0.5000,0.0000,0.0000,-0.5000,-2,,False,,
+Queenscliffe,False,Barwon South West,4br,0,0.0000,0,0.0000,0.0000,0.0000,0.0000,0,,False,,
+South Gippsland,False,Gippsland,4br,13,0.8130,10,0.6250,16.0000,16.0000,-0.1880,-3,0.3046,False,False,False
+Southern Grampians,False,Barwon South West,4br,11,0.9170,5,0.8330,12.0000,6.0000,-0.0840,-6,0.3368,False,False,False
+Stonnington,True,Southern Metro,4br,10,0.1120,9,0.1070,53.0000,46.0000,-0.0050,-1,0.1232,False,False,False
+Strathbogie,False,Hume,4br,4,0.6670,3,0.4290,6.0000,7.0000,-0.2380,-1,0.5260,False,False,False
+Surf Coast,False,Barwon South West,4br,5,0.0420,26,0.1780,113.0000,130.0000,0.1360,21,0.0754,True,False,True
+Swan Hill,False,Loddon Mallee,4br,12,0.8570,2,0.2500,14.0000,8.0000,-0.6070,-10,0.3517,False,True,False
+Towong,False,Hume,4br,2,1.0000,0,0.0000,0.0000,0.0000,-1.0000,-2,,False,,
+Wangaratta,False,Hume,4br,14,0.7000,10,0.4550,17.0000,20.0000,-0.2450,-4,0.3084,False,False,False
+Warrnambool,False,Barwon South West,4br,8,0.2420,1,0.0250,30.0000,39.0000,-0.2170,-7,0.1609,False,True,False
+Wellington,False,Gippsland,4br,39,0.8130,18,0.4390,45.0000,36.0000,-0.3740,-21,0.1981,False,True,False
+West Wimmera,False,Grampians,4br,0,0.0000,2,1.0000,0.0000,0.0000,1.0000,2,,False,,
+Whitehorse,True,Eastern Metro,4br,27,0.0960,8,0.0310,169.0000,167.0000,-0.0650,-19,0.0516,True,False,False
+Whittlesea,True,North and West Metro,4br,138,0.3720,203,0.3300,334.0000,544.0000,-0.0420,65,0.0652,True,False,False
+Wodonga,False,Hume,4br,49,0.5210,15,0.1240,91.0000,115.0000,-0.3970,-34,0.1190,False,True,False
+Wyndham,True,North and West Metro,4br,721,0.5390,945,0.5530,1234.0000,1584.0000,0.0140,224,0.0371,True,False,False
+Yarra,True,North and West Metro,4br,2,0.0420,5,0.1040,31.0000,28.0000,0.0620,3,0.1333,False,False,False
+Yarra Ranges,True,Eastern Metro,4br,7,0.0670,1,0.0110,90.0000,67.0000,-0.0560,-6,0.0574,False,False,False
+Yarriambiack,False,Grampians,4br,3,1.0000,2,1.0000,0.0000,0.0000,0.0000,-1,,False,,
+Alpine,False,Hume,all,32,0.4440,20,0.3850,70.0000,52.0000,-0.0590,-12,0.1762,False,False,False
+Ararat,False,Grampians,all,56,0.7670,49,0.6900,71.0000,70.0000,-0.0770,-7,0.1463,False,False,False
+Ballarat,False,Grampians,all,530,0.5200,754,0.7440,974.0000,979.0000,0.2240,224,0.0416,True,False,True
+Banyule,True,North and West Metro,all,29,0.0250,21,0.0220,976.0000,830.0000,-0.0030,-8,0.0140,True,False,False
+Bass Coast,False,Gippsland,all,135,0.4610,84,0.3490,149.0000,135.0000,-0.1120,-51,0.1135,True,False,False
+Baw Baw,False,Gippsland,all,126,0.3850,41,0.1420,320.0000,280.0000,-0.2430,-85,0.0672,True,True,False
+Bayside,True,Southern Metro,all,5,0.0060,0,0.0000,709.0000,544.0000,-0.0060,-5,0.0057,True,False,False
+Benalla,False,Hume,all,53,0.5960,30,0.2880,84.0000,101.0000,-0.3080,-23,0.1372,False,True,False
+Boroondara,True,Eastern Metro,all,12,0.0070,12,0.0090,1548.0000,1216.0000,0.0020,0,0.0067,True,False,False
+Brimbank,True,North and West Metro,all,148,0.1130,230,0.2040,1140.0000,1026.0000,0.0910,82,0.0308,True,False,True
+Buloke,False,Loddon Mallee,all,11,0.9170,9,0.9000,12.0000,10.0000,-0.0170,-2,0.2428,False,False,False
+Campaspe,False,Loddon Mallee,all,107,0.5380,41,0.2990,195.0000,131.0000,-0.2390,-66,0.1051,True,True,False
+Cardinia,True,Southern Metro,all,272,0.3240,38,0.0500,754.0000,686.0000,-0.2740,-234,0.0372,True,True,False
+Casey,True,Southern Metro,all,471,0.2060,61,0.0270,2128.0000,2046.0000,-0.1790,-410,0.0186,True,True,False
+Central Goldfields,False,Loddon Mallee,all,60,0.8450,33,0.8250,71.0000,39.0000,-0.0200,-27,0.1460,False,False,False
+Colac-Otway,False,Barwon South West,all,58,0.4750,28,0.3540,114.0000,78.0000,-0.1210,-30,0.1402,False,False,False
+Corangamite,False,Barwon South West,all,56,0.7270,25,0.5950,77.0000,41.0000,-0.1320,-31,0.1802,False,False,False
+Darebin,True,North and West Metro,all,48,0.0280,23,0.0170,1527.0000,1251.0000,-0.0110,-25,0.0109,True,False,False
+East Gippsland,False,Gippsland,all,166,0.6290,96,0.3930,251.0000,240.0000,-0.2360,-70,0.0860,True,True,False
+Frankston,True,Southern Metro,all,120,0.1000,14,0.0160,1123.0000,815.0000,-0.0840,-106,0.0195,True,True,False
+Gannawarra,False,Loddon Mallee,all,50,0.9620,16,0.8000,51.0000,20.0000,-0.1620,-34,0.1830,False,False,False
+Glen Eira,True,Southern Metro,all,37,0.0180,22,0.0120,1815.0000,1701.0000,-0.0060,-15,0.0080,True,False,False
+Glenelg,False,Barwon South West,all,85,0.7590,41,0.5540,110.0000,73.0000,-0.2050,-44,0.1393,False,True,False
+Golden Plains,False,Grampians,all,13,0.2710,24,0.4530,47.0000,51.0000,0.1820,11,0.1866,False,False,False
+Greater Bendigo,False,Loddon Mallee,all,394,0.4710,169,0.2340,799.0000,686.0000,-0.2370,-225,0.0469,True,True,False
+Greater Dandenong,True,Southern Metro,all,87,0.0630,21,0.0210,1227.0000,902.0000,-0.0420,-66,0.0165,True,False,False
+Greater Geelong,False,Barwon South West,all,450,0.2030,449,0.2150,2130.0000,1993.0000,0.0120,-1,0.0248,True,False,False
+Greater Shepparton,False,Hume,all,261,0.6040,142,0.2920,405.0000,480.0000,-0.3120,-119,0.0626,True,True,False
+Hepburn,False,Grampians,all,18,0.2690,17,0.2620,59.0000,62.0000,-0.0070,-1,0.1574,False,False,False
+Hindmarsh,False,Grampians,all,34,1.0000,18,0.9470,33.0000,19.0000,-0.0530,-16,0.1007,False,False,False
+Hobsons Bay,True,North and West Metro,all,28,0.0360,18,0.0290,632.0000,560.0000,-0.0070,-10,0.0201,True,False,False
+Horsham,False,Grampians,all,119,0.6920,50,0.4670,172.0000,104.0000,-0.2250,-69,0.1181,True,True,False
+Hume,True,North and West Metro,all,175,0.1140,332,0.1890,1367.0000,1601.0000,0.0750,157,0.0255,True,False,True
+Indigo,False,Hume,all,38,0.5280,7,0.1400,69.0000,49.0000,-0.3880,-31,0.1527,False,True,False
+Kingston,True,Southern Metro,all,17,0.0120,12,0.0120,1218.0000,897.0000,0.0000,-5,0.0094,True,False,False
+Knox,True,Eastern Metro,all,26,0.0270,11,0.0170,868.0000,571.0000,-0.0100,-15,0.0151,True,False,False
+Latrobe,False,Gippsland,all,432,0.7710,278,0.4960,543.0000,549.0000,-0.2750,-154,0.0548,True,True,False
+Loddon,False,Loddon Mallee,all,10,1.0000,3,0.4290,9.0000,7.0000,-0.5710,-7,0.3667,False,True,False
+Macedon Ranges,False,Loddon Mallee,all,10,0.0520,7,0.0460,177.0000,148.0000,-0.0060,-3,0.0470,True,False,False
+Manningham,True,Eastern Metro,all,16,0.0180,7,0.0110,773.0000,525.0000,-0.0070,-9,0.0129,True,False,False
+Mansfield,False,Hume,all,13,0.3020,4,0.1290,43.0000,29.0000,-0.1730,-9,0.1836,False,False,False
+Maribyrnong,True,North and West Metro,all,28,0.0230,19,0.0170,1039.0000,1042.0000,-0.0060,-9,0.0120,True,False,False
+Maroondah,True,Eastern Metro,all,14,0.0170,9,0.0190,736.0000,441.0000,0.0020,-5,0.0158,True,False,False
+Melbourne,True,North and West Metro,all,88,0.0160,78,0.0110,5350.0000,6745.0000,-0.0050,-10,0.0042,True,False,False
+Melton,True,North and West Metro,all,610,0.3990,1409,0.5870,1421.0000,2223.0000,0.1880,799,0.0327,True,False,True
+Merri-bek,True,North and West Metro,all,24,0.0110,50,0.0260,1912.0000,1732.0000,0.0150,26,0.0088,True,False,True
+Mildura,False,Loddon Mallee,all,286,0.6200,155,0.3700,445.0000,407.0000,-0.2500,-131,0.0651,True,True,False
+Mitchell,False,Hume,all,150,0.4970,340,0.7830,293.0000,419.0000,0.2860,190,0.0695,True,False,True
+Moira,False,Hume,all,138,0.7340,54,0.3720,177.0000,138.0000,-0.3620,-84,0.1036,True,True,False
+Monash,True,Eastern Metro,all,43,0.0280,43,0.0290,1253.0000,1282.0000,0.0010,0,0.0130,True,False,False
+Moonee Valley,True,North and West Metro,all,28,0.0210,16,0.0160,1134.0000,887.0000,-0.0050,-12,0.0117,True,False,False
+Moorabool,False,Grampians,all,63,0.3460,70,0.4700,173.0000,142.0000,0.1240,7,0.1085,True,False,True
+Mornington Peninsula,True,Southern Metro,all,79,0.0710,13,0.0150,1009.0000,752.0000,-0.0560,-66,0.0181,True,True,False
+Mount Alexander,False,Loddon Mallee,all,17,0.2070,7,0.1170,78.0000,56.0000,-0.0900,-10,0.1232,False,False,False
+Moyne,False,Barwon South West,all,26,0.4190,10,0.2170,62.0000,45.0000,-0.2020,-16,0.1720,False,False,False
+Murrindindi,False,Hume,all,37,0.6070,27,0.6590,59.0000,38.0000,0.0520,-10,0.1956,False,False,False
+Nillumbik,True,North and West Metro,all,59,0.1760,19,0.0840,290.0000,194.0000,-0.0920,-40,0.0587,True,False,False
+Northern Grampians,False,Grampians,all,43,0.8430,23,0.5110,50.0000,45.0000,-0.3320,-20,0.1775,False,True,False
+Port Phillip,True,Southern Metro,all,17,0.0080,11,0.0060,1938.0000,1749.0000,-0.0020,-6,0.0054,True,False,False
+Pyrenees,False,Grampians,all,12,0.6670,7,0.4670,18.0000,15.0000,-0.2000,-5,0.3334,False,False,False
+Queenscliffe,False,Barwon South West,all,0,0.0000,0,0.0000,8.0000,5.0000,0.0000,0,0.0000,False,False,False
+South Gippsland,False,Gippsland,all,92,0.7540,38,0.4940,120.0000,76.0000,-0.2600,-54,0.1363,False,True,False
+Southern Grampians,False,Barwon South West,all,72,0.8470,38,0.7040,84.0000,52.0000,-0.1430,-34,0.1460,False,False,False
+Stonnington,True,Southern Metro,all,37,0.0160,26,0.0130,2225.0000,1881.0000,-0.0030,-11,0.0073,True,False,False
+Strathbogie,False,Hume,all,34,0.5480,11,0.2750,60.0000,40.0000,-0.2730,-23,0.1871,False,True,False
+Surf Coast,False,Barwon South West,all,11,0.0370,30,0.1040,282.0000,264.0000,0.0670,19,0.0429,True,False,True
+Swan Hill,False,Loddon Mallee,all,88,0.8380,29,0.3770,104.0000,77.0000,-0.4610,-59,0.1294,False,True,False
+Towong,False,Hume,all,18,0.9000,6,0.6670,20.0000,8.0000,-0.2330,-12,0.3521,False,False,False
+Wangaratta,False,Hume,all,99,0.5790,39,0.3200,163.0000,117.0000,-0.2590,-60,0.1135,True,True,False
+Warrnambool,False,Barwon South West,all,79,0.3310,24,0.1010,228.0000,231.0000,-0.2300,-55,0.0724,True,True,False
+Wellington,False,Gippsland,all,181,0.6650,74,0.4400,263.0000,160.0000,-0.2250,-107,0.0958,True,True,False
+West Wimmera,False,Grampians,all,4,1.0000,8,1.0000,0.0000,8.0000,0.0000,4,,False,,
+Whitehorse,True,Eastern Metro,all,35,0.0210,22,0.0160,1434.0000,1244.0000,-0.0050,-13,0.0102,True,False,False
+Whittlesea,True,North and West Metro,all,163,0.1290,255,0.1750,1084.0000,1297.0000,0.0460,92,0.0287,True,False,True
+Wodonga,False,Hume,all,199,0.5510,48,0.1320,348.0000,349.0000,-0.4190,-151,0.0632,True,True,False
+Wyndham,True,North and West Metro,all,920,0.3480,1481,0.4890,2443.0000,2840.0000,0.1410,561,0.0264,True,False,True
+Yarra,True,North and West Metro,all,12,0.0060,25,0.0170,1706.0000,1336.0000,0.0110,13,0.0078,True,False,True
+Yarra Ranges,True,Eastern Metro,all,13,0.0220,12,0.0310,552.0000,350.0000,0.0090,-1,0.0219,True,False,False
+Yarriambiack,False,Grampians,all,23,1.0000,11,1.0000,23.0000,11.0000,0.0000,-12,0.0000,False,False,False
