@@ -1,0 +1,10 @@
+{
+  "source": "Australian Bureau of Statistics, Consumer Price Index (ABS,CPI,2.0.0)",
+  "series": "Index numbers; All groups CPI; Original; Melbourne; Quarterly",
+  "url": "https://data.api.abs.gov.au/rest/data/ABS,CPI,2.0.0/1.10001.10.2.Q?startPeriod=1999-Q1",
+  "licence": "CC BY 4.0",
+  "fetched_utc": "2026-10-25T03:51Z",
+  "first_quarter": "1999-03-31",
+  "last_quarter": "2026-06-30",
+  "quarters": 110
+}
