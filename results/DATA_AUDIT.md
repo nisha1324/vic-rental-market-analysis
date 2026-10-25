@@ -84,7 +84,7 @@ Share of new leases affordable to a lower-income household on Centrelink payment
 | non_metro | Sep 2024  |      0.341 |          0.375 |        0.034 |
 | victoria  | Sep 2024  |      0.104 |          0.12  |        0.016 |
 
-So a release's newest affordability figures are provisional and have so far been revised upwards. The analysis uses the revised Figure 8 values for the state trend, and treats the September 2025 LGA figures (the newest quarter of their own release) as likely to be revised up too.
+So the newest quarter of a release is provisional, and the one revision visible here went up. The analysis uses the revised Figure 8 values for the state trend, and treats the September 2025 LGA figures (the newest quarter of their own release) as likely to be revised up too.
 
 ## Reconciliation with the published report (Table 4)
 
