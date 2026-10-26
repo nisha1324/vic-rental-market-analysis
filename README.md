@@ -1,6 +1,6 @@
 # Victorian Rental Market Analysis
 
-> **Status: in progress. Parts 1–3 of 5 are done: the data audit, where rents are rising fastest, and affordability.** Market activity and the final write-up come next (see [Roadmap](#roadmap)).
+> **Status: in progress. Parts 1–4 of 5 are done: the data audit, where rents are rising fastest, affordability and market activity.** The final write-up comes next (see [Roadmap](#roadmap)).
 
 **Business question:** rents in Victoria have climbed for years, but not evenly. **Where are rents rising fastest, where is it still affordable to rent, and how has that changed since before COVID?** The answer matters to anyone who prices, manages or plans rental housing:
 
@@ -19,12 +19,16 @@
 | Affordable lettings by LGA | 79 LGAs × bedrooms (1–4, all) | Mar 2000 – Sep 2024, 99 quarters | new leases affordable to a lower-income household on Centrelink payments (rent ≤ 30% of gross income), count and share |
 | Report tables, Sep 2025 | Tables 4, 9 and 14; Figure 8 source | Sep 2025 (Figure 8: Sep 2020 – Sep 2025) | Table 4 checks the parsed rents. Table 14 gives affordable lettings by LGA for Sep 2025, Table 9 the household and affordable rent for each bedroom count, Figure 8 a revised state / metro / regional series |
 | ABS Consumer Price Index, Melbourne | All groups, original | Mar 1999 – Jun 2026, quarterly | used to turn rent growth into real (inflation-adjusted) growth |
+| ABS Building Approvals by LGA | 79 Victorian LGAs | Jul 2018 – Jun 2026, monthly summed to quarters | new dwelling units approved (all sectors, total residential), as a supply signal |
+| ABS Census 2021, dwelling structure by LGA | 79 Victorian LGAs | Aug 2021 | total private dwellings, to scale approvals by the size of each LGA |
 
 Dwelling types: 1-, 2- and 3-bedroom flats; 2-, 3- and 4-bedroom houses; all properties.
 
 **Getting the files.** `scripts/download_data.py` tries the official dffh.vic.gov.au links first. That site drops scripted connections from some networks (including the one this was built on), so each file falls back to its Internet Archive capture of the same official URL. Each file's SHA-256 is pinned, so whichever source serves it, the bytes must be identical or the download stops. The affordability series ends in September 2024 because that is the latest workbook with a copy that can be fetched without a browser.
 
 **CPI.** `scripts/download_cpi.py` fetches Melbourne's All groups CPI from the [ABS Data API](https://data.api.abs.gov.au) (no key needed; CC BY 4.0). The cleaned series is small, so it is committed in `data/reference/`; rerunning the script refuses to overwrite it if any past quarter's value has changed. The ABS publishes no CPI for regional Victoria, so regional rents are deflated by Melbourne's too.
+
+**Building approvals and dwellings.** `scripts/download_supply.py` fetches both from the same API. The ABS publishes approvals by LGA one financial year per dataflow, each on that year's boundaries; Victorian LGA codes are the same in all of them except Moreland, renamed Merri-bek in 2022, which is mapped to the new code. All 79 LGAs in the rental report match by name. The two small CSVs are committed in `data/reference/`; unlike the CPI they are overwritten on refresh, because recent months of approvals are preliminary and get revised (the analysis uses approvals only to June 2024).
 
 ## Data audit (Part 1)
 
@@ -103,12 +107,54 @@ Homes Victoria counts a new lease as **affordable** if the rent is no more than 
 - **Employers and universities:** someone on a JobSeeker-level income can't afford the median 1-bedroom flat in any of the 24 LGAs with enough leases to measure. Housing advice and support for low-paid staff and students has to assume shared housing or a subsidy, and regional campuses can no longer assume cheap local rentals.
 - **Planners:** affordable renting is drifting to the outer west and north growth corridors and a few regional cities, often far from jobs. Whether that is new supply or just slower rent growth matters for where to build next; Part 4 looks at lease volumes.
 
+## Where new leases are being signed, and why (Part 4)
+
+A new lease is a rental bond lodged with the RTBA, so the count measures new tenancies: newly built homes let for the first time, and existing rentals changing tenant. Volumes are 12-month sums, comparing the 12 months to September 2019 with the 12 months to September 2025. To tell new homes from turnover, each LGA's new dwelling approvals from July 2018 to June 2024 (so most were built by September 2025) are divided by its dwellings in the 2021 Census: the **building rate**. The analysis is [`sql/06_market_activity.sql`](sql/06_market_activity.sql) on DuckDB. Full tables: [`results/MARKET_ACTIVITY.md`](results/MARKET_ACTIVITY.md).
+
+**State-wide, the number of new leases is flat, but where they are signed has moved.** Victoria had 208,281 new leases in the 12 months to September 2019 and 203,821 in the 12 months to September 2025 (−2.1%; metro −1.3%, regional −5.6%), after a peak of 227,793 in the 12 months to December 2021. Under that flat total, **62 of 77 LGAs signed fewer new leases**, and almost all of the growth went to two places:
+
+| | new leases, 12 months to Sep 2019 | 12 months to Sep 2025 | change | share of Victoria's dwelling approvals | approved / 2021 dwellings |
+|---|---:|---:|---:|---:|---:|
+| Melbourne's 7 growth areas | 34,657 | 43,130 | **+24.4%** | 37.5% | 27.6% |
+| City of Melbourne | 20,758 | 27,689 | **+33.4%** | 4.1% | 15.2% |
+| Rest of Melbourne (24 LGAs) | 114,434 | 97,411 | −14.9% | 35.5% | 9.3% |
+| Rest of regional Victoria (47 LGAs) | 38,424 | 35,587 | −7.4% | 22.9% | 11.5% |
+
+Of the 16,775 extra leases in the LGAs that grew, the growth areas took 52.7% and the City of Melbourne 41.3%. (Growth areas: Cardinia, Casey, Hume, Melton, Mitchell, Whittlesea and Wyndham, as designated by the Victorian Planning Authority; Mitchell counts as regional elsewhere in this project.)
+
+![New leases indexed to 2019](results/charts/lease_volume_index.png)
+
+**Where more homes were built, more new leases were signed, and rents rose less.** Across the 51 well-sampled LGAs, the building rate and the change in new leases have a rank correlation of **0.78** (0.87 in Melbourne, 0.63 in regional Victoria), and 0.77 with a window one year later, so the result doesn't hang on the lag chosen. **Melton** approved new dwellings equal to **49.9% of its 2021 housing stock**; its new leases rose 74.3% and its rents 29.7%, the fourth-smallest rise of the 51. The LGAs in the top half by building rate had a median change in new leases of −3.7% and median rent growth of 36.5%; the bottom half, −18.2% and 47.5%. The five biggest percentage falls in new leases (Horsham, Wellington, Yarra Ranges, Knox, Maroondah, all −27% to −32%) all had building rates under 8% and rent rises of 46–55%.
+
+![Building rate against the change in new leases](results/charts/approvals_vs_lease_growth.png)
+
+**Two exceptions.** Building did not turn into rentals everywhere: **Casey** approved 22.7% of its stock and **Cardinia** 19.7%, but their new leases changed +2.2% and −12.7%, and their rents rose 52.6% and 53.4%, the third- and second-highest of the 31 Melbourne LGAs. The data can't say whether those homes went to owner-occupiers or are still being built. The **City of Melbourne** went the other way: new leases +33.4% on a building rate of 15.2%, while the 9 other LGAs with a similar rate had a median change of −7.0% (only Surf Coast grew as fast). So the city's extra leases likely include more tenants moving in and out of existing apartments, not only new ones.
+
+**Why affordable leases rose in the growth corridors (Part 3's open question).** The change in the number of affordable new leases splits exactly into a **volume effect** (more new leases) and a **share effect** (a bigger affordable share):
+
+![Volume and share effects](results/charts/affordable_decomposition.png)
+
+- **Melton** (+799 affordable leases in the September quarter): **54% from more leases**, 46% from a higher share. New supply explains about half of it.
+- **Mitchell** (+190): 45% from more leases. **Wyndham** (+561): 29%. **Hume** and **Whittlesea**: 21% and 32%.
+- **Ballarat** (+224): none; its new leases were flat, so the whole rise is a higher share.
+
+The share effect means rents there rose more slowly than the affordability thresholds, which follow Centrelink payments. That fits the building pattern: Melton, Mitchell, Wyndham and Ballarat all approved new dwellings equal to 18–50% of their 2021 stock, and their rents rose 30–32%.
+
+**Caveats.** New leases mix new homes with turnover, and a fall can mean tenants moving less, not fewer rentals. Approvals aren't completions, and the 15-month lag is an assumption (checked with a later window). The correlations are across LGAs and don't prove that building slowed rents: high-building LGAs also differ in land price, distance and who moves there. The decomposition uses the affordability workbook's own denominator (affordable leases ÷ share), which is a median 4.7% above the rents workbook's count; Bass Coast is the exception (1.8–2.0 times, every period since 2000), so the two workbooks count that LGA differently.
+
+**So what?**
+
+- **Property managers and agencies:** letting fees follow new leases, and new leases have moved. Established Melbourne signed 14.9% fewer in the year to September 2025 than before COVID, while the growth corridors signed 24.4% more and the CBD 33.4% more. The growth in letting volume since 2019 has come from Melton, Wyndham, Mitchell, Hume, Whittlesea and the CBD. In the established suburbs, where fewer leases are being signed, retaining landlords and their management fees matters more than winning new lettings.
+- **Developers, build-to-rent investors and planners:** the LGAs that built the most also had the slowest rent growth (median 36.5% against 47.5%) and lost less of their affordable share (median −0.5 points against −5.6). The low-building established suburbs and regional towns had the steepest rent rises and the biggest falls in new leases. That supports more infill in established areas. Casey and Cardinia show that approvals alone don't guarantee rentals, so track lettings as well as approvals.
+- **Community housing providers and councils:** about half of Melton's gain in affordable leases came from new supply; in Wyndham, Ballarat and Hume most of it came from rents rising more slowly than Centrelink-linked thresholds. The affordable stock in the corridors depends on building continuing; if building slows, Part 3's regional pattern (rents rising and the affordable share falling) is the likely result.
+- **Employers and universities:** the CBD's 33.4% rise in new leases comes with an affordable share of about 1% (−0.5 points since 2019), so more turnover there hasn't made it any easier for lower-income renters. Affordable options for staff and students are in the outer growth corridors, far from the CBD.
+
 ## Roadmap
 
 - [x] **Part 1: data.** Download with pinned checksums, parse to tidy tables, audit and reconcile against the published report, tests.
 - [x] **Part 2: where rents are rising fastest.** 1-year, 5-year and since-pre-COVID (Sep 2019) growth by suburb and dwelling type, with a 100-lease floor and a sensitivity check; 13 regions in three bands; the COVID dip; real growth on ABS Melbourne CPI. SQL on DuckDB over the tidy tables.
 - [x] **Part 3: affordability.** The affordable share of new leases by LGA and bedroom count, Sep 2019 to Sep 2025, with sampling margins and a revision allowance; where affordable leases are concentrated; rents against each household's affordable rent; Part 2's fastest-rising towns tested.
-- [ ] **Part 4: market activity.** New-lease volumes as a signal of supply (e.g. growth corridors vs the inner city), how volume relates to rent growth, and whether new supply explains the rise in affordable leases in Melton, Wyndham and Mitchell.
+- [x] **Part 4: market activity.** 12-month new-lease volumes by LGA and group (growth areas, City of Melbourne, the rest); ABS dwelling approvals per 2021 dwelling as a building rate, against lease volumes, rent growth and affordability; why affordable leases rose (volume vs share effect).
 - [ ] **Part 5: write-up.** Charts, TL;DR, recommendations for each audience, limitations.
 
 ## How to run
@@ -121,10 +167,12 @@ python scripts/build.py           # tidy CSVs into data/processed/
 python scripts/audit.py           # writes results/DATA_AUDIT.md; exits non-zero if a hard check fails
 python scripts/growth.py          # runs sql/*.sql in DuckDB: results/GROWTH.md, 2 CSVs, 3 charts
 python scripts/affordability.py   # Part 3: results/AFFORDABILITY.md, 1 CSV, 3 charts
-pytest -q                         # 50 tests (the real-data ones skip if data/ is empty)
+python scripts/market_activity.py # Part 4: results/MARKET_ACTIVITY.md, 1 CSV, 3 charts
+pytest -q                         # 66 tests (the real-data ones skip if data/ is empty)
 
-# optional: refresh the committed CPI from the ABS Data API
+# optional: refresh the committed ABS data (CPI; approvals + Census dwellings)
 python scripts/download_cpi.py
+python scripts/download_supply.py
 ```
 
 ## Project structure
@@ -134,9 +182,11 @@ scripts/download_data.py   sources, fallbacks and pinned SHA-256 per file
 scripts/build.py           workbooks -> data/processed/*.csv
 scripts/audit.py           checks -> results/DATA_AUDIT.md
 scripts/download_cpi.py    ABS Melbourne CPI -> data/reference/ (committed)
+scripts/download_supply.py ABS dwelling approvals + Census 2021 dwellings by LGA -> data/reference/ (committed)
 scripts/growth.py          Part 2 report, CSVs and charts
 scripts/affordability.py   Part 3 report, CSV and charts
-sql/                       the analysis in DuckDB SQL, run in order (windows/CPI, suburbs, regions, state, affordability)
+scripts/market_activity.py Part 4 report, CSV and charts
+sql/                       the analysis in DuckDB SQL, run in order (windows/CPI, suburbs, regions, state, affordability, market activity)
 rentals/parse.py           wide Excel sheets -> long tables (+ report Tables 4, 9, 14 and the Figure 8 source)
 rentals/audit.py           coverage, reconciliation, totals, plausibility checks
 rentals/growth.py          loads the tables into DuckDB, runs sql/, floor sensitivity
@@ -144,8 +194,9 @@ tests/                     synthetic tests with hand-worked answers; real-data c
 results/DATA_AUDIT.md      generated audit report
 results/GROWTH.md          generated Part 2 tables; suburb_growth.csv, region_growth.csv; charts/
 results/AFFORDABILITY.md   generated Part 3 tables; lga_affordability_change.csv; charts/
+results/MARKET_ACTIVITY.md generated Part 4 tables; lga_activity.csv; charts/
 ```
 
 ## Attribution
 
-Contains data from Homes Victoria, *Rental Report – Quarterly* (September quarter 2025, including its report tables, and, for the affordable lettings series, September quarter 2024), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The tidy tables in this repo are derived from that data; names were standardised as listed above. Contains Consumer Price Index data from the Australian Bureau of Statistics, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+Contains data from Homes Victoria, *Rental Report – Quarterly* (September quarter 2025, including its report tables, and, for the affordable lettings series, September quarter 2024), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The tidy tables in this repo are derived from that data; names were standardised as listed above. Contains Consumer Price Index, Building Approvals (by LGA) and Census 2021 data from the Australian Bureau of Statistics, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
