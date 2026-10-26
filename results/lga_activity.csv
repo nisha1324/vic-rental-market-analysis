@@ -1,0 +1,80 @@
+lga,metro,group,base_leases_12m,latest_leases_12m,lease_change,lease_growth,approvals,approvals_late,dwellings_2021,approval_rate,approval_rate_late,rent_growth,affordable_change,affordable_clear_rise,affordable_clear_fall,well_sampled
+Alpine,False,Rest of regional Victoria,301.0000,279.0000,-22.0000,-0.0731,460.0000,404.0000,6661,0.0691,0.0607,0.4516,-0.0590,False,False,False
+Ararat,False,Rest of regional Victoria,295.0000,253.0000,-42.0000,-0.1424,290.0000,302.0000,5141,0.0564,0.0587,0.4444,-0.0770,False,False,False
+Ballarat,False,Rest of regional Victoria,3927.0000,4192.0000,265.0000,0.0675,8797.0000,8216.0000,48235,0.1824,0.1703,0.3125,0.2240,True,False,True
+Banyule,True,Rest of Melbourne,3948.0000,3439.0000,-509.0000,-0.1289,5651.0000,5547.0000,51602,0.1095,0.1075,0.3659,-0.0030,False,False,True
+Bass Coast,False,Rest of regional Victoria,595.0000,553.0000,-42.0000,-0.0706,3918.0000,3673.0000,27496,0.1425,0.1336,0.4769,-0.1120,False,False,True
+Baw Baw,False,Rest of regional Victoria,1185.0000,1049.0000,-136.0000,-0.1148,3920.0000,3761.0000,23365,0.1678,0.1610,0.5441,-0.2430,False,True,True
+Bayside,True,Rest of Melbourne,2822.0000,2417.0000,-405.0000,-0.1435,4857.0000,5602.0000,41805,0.1162,0.1340,0.3509,-0.0060,False,False,True
+Benalla,False,Rest of regional Victoria,347.0000,386.0000,39.0000,0.1124,530.0000,573.0000,6770,0.0783,0.0846,0.4754,-0.3080,False,True,False
+Boroondara,True,Rest of Melbourne,6566.0000,5402.0000,-1164.0000,-0.1773,6040.0000,6094.0000,70862,0.0852,0.0860,0.3263,0.0020,False,False,True
+Brimbank,True,Rest of Melbourne,4402.0000,3767.0000,-635.0000,-0.1443,3912.0000,3816.0000,68236,0.0573,0.0559,0.3611,0.0910,True,False,True
+Buloke,False,Rest of regional Victoria,63.0000,47.0000,-16.0000,-0.2540,74.0000,80.0000,3118,0.0237,0.0257,0.7436,-0.0170,False,False,False
+Campaspe,False,Rest of regional Victoria,770.0000,563.0000,-207.0000,-0.2688,921.0000,888.0000,16804,0.0548,0.0528,0.5862,-0.2390,False,True,True
+Cardinia,True,Growth areas,2882.0000,2517.0000,-365.0000,-0.1266,8212.0000,7662.0000,41728,0.1968,0.1836,0.5342,-0.2740,False,True,True
+Casey,True,Growth areas,7967.0000,8145.0000,178.0000,0.0223,26791.0000,26402.0000,117991,0.2271,0.2238,0.5263,-0.1790,False,True,True
+Central Goldfields,False,Rest of regional Victoria,251.0000,160.0000,-91.0000,-0.3625,412.0000,407.0000,6563,0.0628,0.0620,0.4902,-0.0200,False,False,False
+Colac-Otway,False,Rest of regional Victoria,449.0000,352.0000,-97.0000,-0.2160,809.0000,773.0000,11657,0.0694,0.0663,0.4516,-0.1210,False,False,False
+Corangamite,False,Rest of regional Victoria,261.0000,169.0000,-92.0000,-0.3525,351.0000,340.0000,7424,0.0473,0.0458,0.5385,-0.1320,False,False,False
+Darebin,True,Rest of Melbourne,5932.0000,5001.0000,-931.0000,-0.1569,6114.0000,5883.0000,65929,0.0927,0.0892,0.3750,-0.0110,False,False,True
+East Gippsland,False,Rest of regional Victoria,1052.0000,937.0000,-115.0000,-0.1093,2404.0000,2362.0000,24334,0.0988,0.0971,0.5333,-0.2360,False,True,True
+Frankston,True,Rest of Melbourne,4224.0000,3246.0000,-978.0000,-0.2315,2864.0000,2723.0000,56304,0.0509,0.0484,0.5556,-0.0840,False,True,True
+Gannawarra,False,Rest of regional Victoria,205.0000,87.0000,-118.0000,-0.5756,233.0000,228.0000,4977,0.0468,0.0458,0.4682,-0.1620,False,False,False
+Glen Eira,True,Rest of Melbourne,7699.0000,6803.0000,-896.0000,-0.1164,6858.0000,5982.0000,64338,0.1066,0.0930,0.3889,-0.0060,False,False,True
+Glenelg,False,Rest of regional Victoria,429.0000,346.0000,-83.0000,-0.1935,425.0000,441.0000,9565,0.0444,0.0461,0.5556,-0.2050,False,True,False
+Golden Plains,False,Rest of regional Victoria,145.0000,199.0000,54.0000,0.3724,1334.0000,1248.0000,9019,0.1479,0.1384,0.1500,0.1820,False,False,False
+Greater Bendigo,False,Rest of regional Victoria,3284.0000,2763.0000,-521.0000,-0.1586,5627.0000,5640.0000,50599,0.1112,0.1115,0.5406,-0.2370,False,True,True
+Greater Dandenong,True,Rest of Melbourne,4807.0000,3676.0000,-1131.0000,-0.2353,4299.0000,3738.0000,55471,0.0775,0.0674,0.4722,-0.0420,False,False,True
+Greater Geelong,False,Rest of regional Victoria,7968.0000,8101.0000,133.0000,0.0167,21993.0000,21293.0000,115839,0.1899,0.1838,0.3514,0.0120,False,False,True
+Greater Shepparton,False,Rest of regional Victoria,1661.0000,1727.0000,66.0000,0.0397,2652.0000,2717.0000,26895,0.0986,0.1010,0.6491,-0.3120,False,True,True
+Hepburn,False,Rest of regional Victoria,265.0000,261.0000,-4.0000,-0.0151,744.0000,796.0000,8849,0.0841,0.0900,0.3912,-0.0070,False,False,False
+Hindmarsh,False,Rest of regional Victoria,113.0000,79.0000,-34.0000,-0.3009,66.0000,72.0000,2956,0.0223,0.0244,0.6098,-0.0530,False,False,False
+Hobsons Bay,True,Rest of Melbourne,2641.0000,2456.0000,-185.0000,-0.0700,4806.0000,4756.0000,37798,0.1271,0.1258,0.3810,-0.0070,False,False,True
+Horsham,False,Rest of regional Victoria,702.0000,481.0000,-221.0000,-0.3148,504.0000,505.0000,9126,0.0552,0.0553,0.4727,-0.2250,False,True,True
+Hume,True,Growth areas,5077.0000,6054.0000,977.0000,0.1924,19199.0000,19675.0000,80257,0.2392,0.2451,0.3636,0.0750,True,False,True
+Indigo,False,Rest of regional Victoria,235.0000,166.0000,-69.0000,-0.2936,664.0000,597.0000,7309,0.0908,0.0817,0.5000,-0.3880,False,True,False
+Kingston,True,Rest of Melbourne,4836.0000,3772.0000,-1064.0000,-0.2200,5083.0000,4915.0000,65671,0.0774,0.0748,0.4019,0.0000,False,False,True
+Knox,True,Rest of Melbourne,3439.0000,2482.0000,-957.0000,-0.2783,4501.0000,4349.0000,60403,0.0745,0.0720,0.4634,-0.0100,False,False,True
+Latrobe,False,Rest of regional Victoria,2153.0000,1955.0000,-198.0000,-0.0920,2395.0000,2423.0000,33562,0.0714,0.0722,0.6154,-0.2750,False,True,True
+Loddon,False,Rest of regional Victoria,51.0000,28.0000,-23.0000,-0.4510,136.0000,142.0000,3929,0.0346,0.0361,0.6522,-0.5710,False,True,False
+Macedon Ranges,False,Rest of regional Victoria,657.0000,602.0000,-55.0000,-0.0837,2461.0000,2324.0000,19699,0.1249,0.1180,0.3488,-0.0060,False,False,True
+Manningham,True,Rest of Melbourne,2822.0000,2308.0000,-514.0000,-0.1821,5024.0000,3950.0000,48744,0.1031,0.0810,0.4468,-0.0070,False,False,True
+Mansfield,False,Rest of regional Victoria,194.0000,161.0000,-33.0000,-0.1701,687.0000,625.0000,6131,0.1121,0.1019,0.5714,-0.1730,False,False,False
+Maribyrnong,True,Rest of Melbourne,4176.0000,4281.0000,105.0000,0.0251,6611.0000,6701.0000,38656,0.1710,0.1733,0.3095,-0.0060,False,False,True
+Maroondah,True,Rest of Melbourne,2806.0000,2037.0000,-769.0000,-0.2741,3585.0000,3474.0000,45711,0.0784,0.0760,0.4750,0.0020,False,False,True
+Melbourne,True,City of Melbourne,20758.0000,27689.0000,6931.0000,0.3339,14699.0000,16284.0000,96839,0.1518,0.1682,0.2642,-0.0050,False,False,True
+Melton,True,Growth areas,4938.0000,8609.0000,3671.0000,0.7434,28784.0000,30699.0000,57704,0.4988,0.5320,0.2973,0.1880,True,False,True
+Merri-bek,True,Rest of Melbourne,7850.0000,6908.0000,-942.0000,-0.1200,8880.0000,9290.0000,75471,0.1177,0.1231,0.3095,0.0150,True,False,True
+Mildura,False,Rest of regional Victoria,1574.0000,1580.0000,6.0000,0.0038,1733.0000,1716.0000,23408,0.0740,0.0733,0.5763,-0.2500,False,True,True
+Mitchell,False,Growth areas,969.0000,1618.0000,649.0000,0.6698,5869.0000,6079.0000,18530,0.3167,0.3281,0.3143,0.2860,True,False,True
+Moira,False,Rest of regional Victoria,693.0000,567.0000,-126.0000,-0.1818,1396.0000,1505.0000,14030,0.0995,0.1073,0.7037,-0.3620,False,True,True
+Monash,True,Rest of Melbourne,5326.0000,5287.0000,-39.0000,-0.0073,7983.0000,6452.0000,73895,0.1080,0.0873,0.4444,0.0010,False,False,True
+Moonee Valley,True,Rest of Melbourne,4727.0000,3778.0000,-949.0000,-0.2008,6287.0000,5956.0000,53173,0.1182,0.1120,0.3750,-0.0050,False,False,True
+Moorabool,False,Rest of regional Victoria,587.0000,582.0000,-5.0000,-0.0085,2363.0000,2154.0000,14807,0.1596,0.1455,0.3333,0.1240,True,False,True
+Mornington Peninsula,True,Rest of Melbourne,3626.0000,2901.0000,-725.0000,-0.1999,5932.0000,5440.0000,89181,0.0665,0.0610,0.5000,-0.0560,False,True,True
+Mount Alexander,False,Rest of regional Victoria,296.0000,239.0000,-57.0000,-0.1926,967.0000,883.0000,9589,0.1008,0.0921,0.4559,-0.0900,False,False,False
+Moyne,False,Rest of regional Victoria,223.0000,159.0000,-64.0000,-0.2870,532.0000,497.0000,8065,0.0660,0.0616,0.5556,-0.2020,False,False,False
+Murrindindi,False,Rest of regional Victoria,209.0000,177.0000,-32.0000,-0.1531,646.0000,602.0000,7684,0.0841,0.0783,0.3333,0.0520,False,False,False
+Nillumbik,True,Rest of Melbourne,1043.0000,812.0000,-231.0000,-0.2215,1034.0000,900.0000,21915,0.0472,0.0411,0.4146,-0.0920,False,False,True
+Northern Grampians,False,Rest of regional Victoria,267.0000,191.0000,-76.0000,-0.2846,184.0000,196.0000,5778,0.0318,0.0339,0.5094,-0.3320,False,True,False
+Port Phillip,True,Rest of Melbourne,7677.0000,6834.0000,-843.0000,-0.1098,6307.0000,7637.0000,59798,0.1055,0.1277,0.3587,-0.0020,False,False,True
+Pyrenees,False,Rest of regional Victoria,70.0000,48.0000,-22.0000,-0.3143,269.0000,249.0000,3671,0.0733,0.0678,0.5094,-0.2000,False,False,False
+Queenscliffe,False,Rest of regional Victoria,32.0000,,,,159.0000,148.0000,2682,0.0593,0.0552,0.5333,0.0000,False,False,False
+South Gippsland,False,Rest of regional Victoria,464.0000,388.0000,-76.0000,-0.1638,1222.0000,1127.0000,16154,0.0756,0.0698,0.5464,-0.2600,False,True,False
+Southern Grampians,False,Rest of regional Victoria,335.0000,240.0000,-95.0000,-0.2836,324.0000,305.0000,7872,0.0412,0.0387,0.4902,-0.1430,False,False,False
+Stonnington,True,Rest of Melbourne,8593.0000,7401.0000,-1192.0000,-0.1387,5351.0000,5264.0000,57080,0.0937,0.0922,0.2917,-0.0030,False,False,True
+Strathbogie,False,Rest of regional Victoria,228.0000,182.0000,-46.0000,-0.2018,564.0000,553.0000,5714,0.0987,0.0968,0.6724,-0.2730,False,True,False
+Surf Coast,False,Rest of regional Victoria,998.0000,1336.0000,338.0000,0.3387,2723.0000,2180.0000,19527,0.1394,0.1116,0.2609,0.0670,True,False,True
+Swan Hill,False,Rest of regional Victoria,437.0000,302.0000,-135.0000,-0.3089,400.0000,408.0000,8721,0.0459,0.0468,0.6538,-0.4610,False,True,False
+Towong,False,Rest of regional Victoria,106.0000,47.0000,-59.0000,-0.5566,139.0000,138.0000,2891,0.0481,0.0477,0.3750,-0.2330,False,False,False
+Wangaratta,False,Rest of regional Victoria,666.0000,604.0000,-62.0000,-0.0931,1052.0000,1024.0000,12952,0.0812,0.0791,0.6071,-0.2590,False,True,True
+Warrnambool,False,Rest of regional Victoria,1008.0000,838.0000,-170.0000,-0.1687,1449.0000,1490.0000,15223,0.0952,0.0979,0.5244,-0.2300,False,True,True
+Wellington,False,Rest of regional Victoria,1150.0000,792.0000,-358.0000,-0.3113,1680.0000,1591.0000,22151,0.0758,0.0718,0.5536,-0.2250,False,True,True
+West Wimmera,False,Rest of regional Victoria,,33.0000,,,32.0000,32.0000,2085,0.0153,0.0153,,0.0000,,,False
+Whitehorse,True,Rest of Melbourne,5869.0000,5245.0000,-624.0000,-0.1063,8516.0000,7588.0000,69511,0.1225,0.1092,0.3778,-0.0050,False,False,True
+Whittlesea,True,Growth areas,4020.0000,4950.0000,930.0000,0.2313,16721.0000,17306.0000,80108,0.2087,0.2160,0.3947,0.0460,True,False,True
+Wodonga,False,Rest of regional Victoria,1415.0000,1323.0000,-92.0000,-0.0650,2189.0000,2177.0000,17465,0.1253,0.1246,0.6562,-0.4190,False,True,True
+Wyndham,True,Growth areas,8804.0000,11237.0000,2433.0000,0.2764,30167.0000,29543.0000,95935,0.3145,0.3079,0.3158,0.1410,True,False,True
+Yarra,True,Rest of Melbourne,6526.0000,5690.0000,-836.0000,-0.1281,4656.0000,5049.0000,47806,0.0974,0.1056,0.3131,0.0110,True,False,True
+Yarra Ranges,True,Rest of Melbourne,2077.0000,1468.0000,-609.0000,-0.2932,3386.0000,3647.0000,59475,0.0569,0.0613,0.5000,0.0090,False,False,True
+Yarriambiack,False,Rest of regional Victoria,87.0000,47.0000,-40.0000,-0.4598,71.0000,86.0000,3389,0.0210,0.0254,0.6316,0.0000,False,False,False
