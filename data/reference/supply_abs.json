@@ -1,0 +1,15 @@
+{
+  "source": "Australian Bureau of Statistics: Building Approvals by LGA (ABS,BA_LGA2018-2025); Census 2021 G36 Dwelling structure by LGA (ABS,C21_G36_LGA)",
+  "approvals_series": "Number of dwelling units; Total sectors; New; Total residential; monthly, summed to complete quarters",
+  "dwellings_series": "Total private dwellings, Census 2021 (place of enumeration)",
+  "approvals_url": "https://data.api.abs.gov.au/rest/data/ABS,BA_LGA{y}/1.9.1.100.LGA{y}..M?format=csv",
+  "dwellings_url": "https://data.api.abs.gov.au/rest/data/ABS,C21_G36_LGA,1.0.0/_T.D..LGA2021.2?format=csv",
+  "licence": "CC BY 4.0",
+  "fetched_utc": "2026-10-26T03:47Z",
+  "first_quarter": "2018-09-30",
+  "last_quarter": "2026-06-30",
+  "lgas": 79,
+  "renamed_codes": {
+    "25250": "24700"
+  }
+}
